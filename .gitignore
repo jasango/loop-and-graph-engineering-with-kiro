@@ -1,0 +1,29 @@
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Environment / secrets
+.env
+.env.*
+!.env.example
+
+# Logs
+*.log
+logs/
+
+# Editor
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Context
+.context/
+# Agent runtime artifacts
+.agents/
+# Node / builds
+node_modules/
+dist/
+# Runtime
+*.pid

@@ -1,0 +1,32 @@
+Command: npm test
+Exit code: 0
+
+> kahoot-kiro@0.1.0 test
+> vitest run
+ RUN  v2.1.2 /Users/jsantana/Desktop/repos/loop-and-graph-engineering-with-kiro/Loop4/kahoot-kiro/app
+ · tests/smoke.test.ts (1)
+   · application scaffold (1)
+     · renders the application title
+ ✓ tests/smoke.test.ts (1)
+   ✓ application scaffold (1)
+     ✓ renders the application title
+ ✓ tests/smoke.test.ts (1)
+   ✓ application scaffold (1)
+     ✓ renders the application title
+ Test Files  1 passed (1)
+      Tests  1 passed (1)
+   Start at  20:20:37
+   Duration  346ms (transform 13ms, setup 31ms, collect 29ms, tests 25ms, environment 130ms, prepare 25ms)
+⠙
+
+File check:
+FOUND package.json
+FOUND package-lock.json
+FOUND tsconfig.json
+FOUND tsconfig.node.json
+FOUND vite.config.ts
+FOUND index.html
+FOUND src/vite-env.d.ts
+FOUND src/main.tsx
+FOUND tests/setup.ts
+FOUND tests/smoke.test.ts

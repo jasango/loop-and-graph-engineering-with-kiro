@@ -1,0 +1,51 @@
+{
+  "name": "software-spec",
+  "description": "Crea la carpeta física del proyecto dentro de Loop4 y refina la especificación con el usuario hasta que el usuario y el revisor la aprueban.",
+  "modelId": "gpt-5.6-luna",
+  "effortLevel": "medium",
+  "inputs": {
+    "idea": "prompt"
+  },
+  "steps": [
+    {
+      "type": "step",
+      "id": "namer",
+      "agent": "loop4-project-namer",
+      "prompt": "Idea: {{idea}}. Crea la carpeta física del proyecto dentro de Loop4 y reinicia el estado dentro de ella según tu perfil.",
+      "captureOutput": true
+    },
+    {
+      "type": "repeat",
+      "id": "spec-loop",
+      "maxIterations": 10,
+      "onMaxIterations": "pause",
+      "stopCondition": {
+        "fileCheck": {
+          "path": "{{namer.output}}/workflow-output/loop4-spec-status.json",
+          "jsonPath": "approved",
+          "value": true
+        }
+      },
+      "steps": [
+        {
+          "type": "step",
+          "id": "analyst",
+          "agent": "loop4-spec-analyst",
+          "prompt": "Idea: {{idea}}. La ruta física del proyecto es {{namer.output}}. Ejecuta una ronda de preguntas y actualiza la especificación según tu perfil.",
+          "completion": {
+            "completionSignal": "success"
+          }
+        },
+        {
+          "type": "step",
+          "id": "reviewer",
+          "agent": "loop4-spec-reviewer",
+          "prompt": "La ruta física del proyecto es {{namer.output}}. Revisa la especificación de esta ronda según tu perfil.",
+          "artifacts": {
+            "status": "{{namer.output}}/workflow-output/loop4-spec-status.json"
+          }
+        }
+      ]
+    }
+  ]
+}

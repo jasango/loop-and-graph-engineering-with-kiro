@@ -1,0 +1,36 @@
+{
+  "schemaVersion": 1,
+  "project": "kahoot-kiro",
+  "projectDir": "Loop4/kahoot-kiro",
+  "deployDir": "Loop4/kahoot-kiro/deploy",
+  "appDir": "Loop4/kahoot-kiro/app",
+  "approved": true,
+  "stack": "React 18.3.1 + TypeScript 5.6.2 + Vite 5.4.8, frontend estático sin backend",
+  "install": [
+    "npm ci"
+  ],
+  "build": [
+    "npm run build"
+  ],
+  "processes": [
+    {
+      "name": "kahoot-kiro-vite",
+      "command": "npm run dev -- --host 127.0.0.1 --port 5173",
+      "env": {
+        "HOST": "127.0.0.1",
+        "PORT": "5173"
+      },
+      "port": 5173
+    }
+  ],
+  "url": "http://127.0.0.1:5173/",
+  "healthUrls": [
+    "http://127.0.0.1:5173/"
+  ],
+  "artifacts": [
+    "start.sh",
+    "stop.sh",
+    "proposal.md",
+    "proposal.json"
+  ]
+}

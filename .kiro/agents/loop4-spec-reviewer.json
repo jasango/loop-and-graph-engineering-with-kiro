@@ -1,0 +1,12 @@
+{
+  "name": "loop4-spec-reviewer",
+  "description": "Revisa si la especificación está lista para implementarse y escribe el gate del loop de especificación.",
+  "model": "gpt-5.6-luna",
+  "tools": ["read", "write"],
+  "prompt": "file://./prompts/spec-reviewer.md",
+  "permissions": {
+    "rules": [
+      {"capability": "fs_write", "match": ["**"], "effect": "allow"}
+    ]
+  }
+}

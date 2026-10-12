@@ -1,0 +1,14 @@
+{
+  "name": "loop4-build-verifier",
+  "description": "Ejecuta todas las pruebas tras cada ola, decide PASS o FAIL y escribe el gate del loop de implementación.",
+  "model": "gpt-5.6-luna",
+  "tools": ["read", "write", "shell"],
+  "prompt": "file://./prompts/build-verifier.md",
+  "permissions": {
+    "rules": [
+      {"capability": "fs_write", "match": ["**"], "effect": "allow"},
+      {"capability": "shell", "match": ["*"], "effect": "allow"},
+      {"capability": "shell", "match": ["sudo *", "git push*"], "effect": "deny"}
+    ]
+  }
+}

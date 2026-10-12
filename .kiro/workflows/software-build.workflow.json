@@ -1,0 +1,72 @@
+{
+  "name": "software-build",
+  "description": "Planifica la implementación de una especificación aprobada, pide confirmación y ejecuta el plan por olas con tres carriles paralelos y verificación de pruebas.",
+  "modelId": "gpt-5.6-luna",
+  "effortLevel": "medium",
+  "inputs": {
+    "project": "string"
+  },
+  "steps": [
+    {
+      "type": "step",
+      "id": "planner",
+      "agent": "loop4-build-planner",
+      "prompt": "Proyecto: {{project}}. Ruta física del proyecto: Loop4/{{project}}. Crea el plan de implementación y pide confirmación al usuario según tu perfil.",
+      "completion": {
+        "completionSignal": "success"
+      },
+      "artifacts": {
+        "plan": "Loop4/{{project}}/plan/plan.md"
+      }
+    },
+    {
+      "type": "repeat",
+      "id": "build-loop",
+      "maxIterations": 15,
+      "onMaxIterations": "pause",
+      "stopCondition": {
+        "fileCheck": {
+          "path": "Loop4/{{project}}/workflow-output/loop4-build-status.json",
+          "jsonPath": "done",
+          "value": true
+        }
+      },
+      "steps": [
+        {
+          "type": "parallel",
+          "id": "lanes",
+          "joinPolicy": "all",
+          "branches": [
+            {
+              "type": "step",
+              "id": "lane-1",
+              "agent": "loop4-build-coder",
+              "prompt": "Proyecto: {{project}}. Ruta física del proyecto: Loop4/{{project}}. CARRIL: 1. Implementa tu grupo de la ola actual según tu perfil."
+            },
+            {
+              "type": "step",
+              "id": "lane-2",
+              "agent": "loop4-build-coder",
+              "prompt": "Proyecto: {{project}}. Ruta física del proyecto: Loop4/{{project}}. CARRIL: 2. Implementa tu grupo de la ola actual según tu perfil."
+            },
+            {
+              "type": "step",
+              "id": "lane-3",
+              "agent": "loop4-build-coder",
+              "prompt": "Proyecto: {{project}}. Ruta física del proyecto: Loop4/{{project}}. CARRIL: 3. Implementa tu grupo de la ola actual según tu perfil."
+            }
+          ]
+        },
+        {
+          "type": "step",
+          "id": "verifier",
+          "agent": "loop4-build-verifier",
+          "prompt": "Proyecto: {{project}}. Ruta física del proyecto: Loop4/{{project}}. Ejecuta las pruebas de la ola actual y actualiza el estado según tu perfil.",
+          "artifacts": {
+            "status": "Loop4/{{project}}/workflow-output/loop4-build-status.json"
+          }
+        }
+      ]
+    }
+  ]
+}

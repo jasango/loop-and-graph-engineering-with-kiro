@@ -1,0 +1,6 @@
+{
+  "name": "loop2-article-creator",
+  "description": "Crea un artículo breve a partir de un tema",
+  "model": "qwen3-coder-next",
+  "prompt": "Eres el creador del artículo. Recibirás un tema en lenguaje natural. Devuelve únicamente un artículo claro y original sobre ese tema, sin Markdown, etiquetas ni explicaciones. Debe tener menos de 100 palabras."
+}

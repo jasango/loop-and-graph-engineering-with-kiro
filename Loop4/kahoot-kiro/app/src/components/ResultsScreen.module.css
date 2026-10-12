@@ -1,0 +1,52 @@
+.screen {
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
+  padding: 2rem 1rem;
+  background: linear-gradient(135deg, #1368ce 0%, #0d4da0 52%, #092f6d 100%);
+  color: #fff;
+}
+
+.card {
+  width: min(100%, 34rem);
+  padding: clamp(2rem, 7vw, 3.5rem) clamp(1.5rem, 7vw, 4rem);
+  text-align: center;
+  border-radius: 1.5rem;
+  background: rgba(255, 255, 255, .12);
+  border: 1px solid rgba(255, 255, 255, .22);
+  box-shadow: 0 1.5rem 4rem rgba(3, 22, 61, .3);
+  backdrop-filter: blur(12px);
+}
+
+.trophy {
+  display: grid;
+  place-items: center;
+  width: 4.25rem;
+  height: 4.25rem;
+  margin: 0 auto 1.25rem;
+  border-radius: 50%;
+  background: #ffe55c;
+  color: #8a5d00;
+  font-size: 2.25rem;
+  box-shadow: 0 .35rem 0 #d3aa26;
+}
+
+.eyebrow { margin: 0 0 .5rem; color: #d7e8ff; font-size: .8rem; font-weight: 800; letter-spacing: .14em; text-transform: uppercase; }
+.card h1 { margin: 0; font-size: clamp(2.25rem, 8vw, 3.25rem); line-height: 1.05; letter-spacing: -.04em; }
+.summary { margin: .8rem 0 1.5rem; color: #dceaff; }
+.scoreBlock { padding: 1rem; border-radius: 1rem; background: rgba(0, 0, 0, .16); }
+.scoreLabel, .points { display: block; color: #c4dcfc; font-size: .85rem; font-weight: 700; }
+.scoreBlock strong { display: inline-block; margin: .2rem .4rem 0 0; color: #fff; font-size: clamp(3rem, 12vw, 4.5rem); line-height: 1; }
+.points { display: inline; }
+.metrics { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin: 1.25rem 0 1.75rem; }
+.metrics div { padding: .9rem; border-radius: .75rem; background: rgba(255, 255, 255, .1); }
+.metrics dt { color: #c4dcfc; font-size: .8rem; font-weight: 700; }
+.metrics dd { margin: .35rem 0 0; font-size: 1.5rem; font-weight: 800; }
+.metrics small { color: #c4dcfc; font-size: .8rem; font-weight: 500; }
+.primaryButton { display: inline-flex; align-items: center; justify-content: center; gap: .75rem; min-width: 12rem; padding: .9rem 1.5rem; border: 0; border-radius: .65rem; background: #ff7a3d; color: #351407; font: inherit; font-weight: 800; cursor: pointer; box-shadow: 0 .3rem 0 #cf5422; transition: transform .15s ease, filter .15s ease; }
+.primaryButton:hover { filter: brightness(1.08); transform: translateY(-2px); }
+.primaryButton:active { transform: translateY(1px); box-shadow: 0 .1rem 0 #cf5422; }
+.primaryButton:focus-visible { outline: 3px solid #ffe55c; outline-offset: 4px; }
+.primaryButton span { font-size: 1.3rem; }
+@media (prefers-reduced-motion: reduce) { .primaryButton { transition: none; } }
+@media (max-width: 24rem) { .metrics { grid-template-columns: 1fr; } }

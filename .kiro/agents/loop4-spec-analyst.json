@@ -1,0 +1,14 @@
+{
+  "name": "loop4-spec-analyst",
+  "description": "Conversa con el usuario y mantiene la especificación del software. Una invocación es una ronda de preguntas y respuestas.",
+  "model": "gpt-5.6-luna",
+  "tools": ["read", "write", "web"],
+  "prompt": "file://./prompts/spec-analyst.md",
+  "permissions": {
+    "rules": [
+      {"capability": "fs_write", "match": ["**"], "effect": "allow"},
+      {"capability": "web_search", "effect": "allow"},
+      {"capability": "web_fetch", "effect": "allow"}
+    ]
+  }
+}

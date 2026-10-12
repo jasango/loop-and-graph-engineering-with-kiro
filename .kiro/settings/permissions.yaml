@@ -1,0 +1,28 @@
+rules:
+  - capability: shell
+    effect: allow
+    match:
+      - "git commit*"
+      - "git push*"
+      - "cdk deploy*"
+      - "npx cdk deploy*"
+      - "cdk destroy*"
+      - "npx cdk destroy*"
+      - "aws * delete-*"
+      - "aws * remove-*"
+      - "aws * deregister-*"
+      - "aws cloudformation deploy*"
+  - capability: fs_read
+    effect: allow
+  - capability: fs_write
+    effect: allow
+  - capability: shell
+    effect: allow
+  - capability: web_search
+    effect: allow
+  - capability: web_fetch
+    effect: allow
+  - capability: mcp
+    effect: allow
+  - capability: power
+    effect: allow

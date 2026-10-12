@@ -1,0 +1,8 @@
+.timer { width: 100%; color: #172554; }
+.timerHeader { display: flex; justify-content: space-between; align-items: center; margin-bottom: .4rem; font-weight: 700; }
+.timerHeader strong { font-size: 1.35rem; }
+.track { height: .65rem; overflow: hidden; border-radius: 999px; background: #e2e8f0; }
+.progress { height: 100%; border-radius: inherit; transition: width .2s linear, background-color .2s ease; }
+.safe .progress { background: #16a34a; }
+.warning .progress { background: #eab308; }
+.critical .progress { background: #dc2626; }

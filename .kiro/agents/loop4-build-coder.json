@@ -1,0 +1,14 @@
+{
+  "name": "loop4-build-coder",
+  "description": "Implementa el grupo del plan asignado a su carril en la ola actual, con sus pruebas unitarias.",
+  "model": "gpt-5.6-luna",
+  "tools": ["read", "write", "shell"],
+  "prompt": "file://./prompts/build-coder.md",
+  "permissions": {
+    "rules": [
+      {"capability": "fs_write", "match": ["**"], "effect": "allow"},
+      {"capability": "shell", "match": ["*"], "effect": "allow"},
+      {"capability": "shell", "match": ["sudo *", "git push*"], "effect": "deny"}
+    ]
+  }
+}

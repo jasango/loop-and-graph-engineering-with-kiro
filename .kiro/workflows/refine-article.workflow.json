@@ -1,0 +1,44 @@
+{
+  "name": "refine-article",
+  "description": "Crea y refina un artículo breve hasta aprobarlo o agotar cinco iteraciones. Guarda cada iteración en una carpeta propia del tema.",
+  "inputs": {
+    "topic": "prompt"
+  },
+  "steps": [
+    {
+      "type": "step",
+      "id": "namer",
+      "agent": "loop3-article-namer",
+      "prompt": "Tema: {{topic}}. Define la carpeta de esta ejecución y reinicia el estado según tu perfil.",
+      "artifacts": {
+        "status": ".kiro/workflow-output/loop3-article-status.json"
+      },
+      "captureOutput": true
+    },
+    {
+      "type": "repeat",
+      "id": "article-loop",
+      "maxIterations": 5,
+      "onMaxIterations": "continue",
+      "stopCondition": {
+        "fileCheck": {
+          "path": ".kiro/workflow-output/loop3-article-status.json",
+          "jsonPath": "approved",
+          "value": true
+        }
+      },
+      "steps": [
+        {
+          "type": "step",
+          "id": "article-iteration",
+          "agent": "loop3-article-orchestrator",
+          "prompt": "Ejecuta exactamente una vuelta del protocolo descrito por tu perfil para el tema siguiente. Tema: {{topic}}. Carpeta de la ejecución (informativa; la fuente de verdad es el campo runDir de .kiro/workflow-output/loop3-article-status.json): {{namer.output}}. Escribe únicamente en la carpeta de la ejecución (runDir) y en .kiro/workflow-output/loop3-article-status.json, y no uses shell, Python, hooks ni otros agentes. Debes escribir y releer los artifacts de la vuelta antes de terminar.",
+          "artifacts": {
+            "status": ".kiro/workflow-output/loop3-article-status.json"
+          },
+          "captureOutput": true
+        }
+      ]
+    }
+  ]
+}

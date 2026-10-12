@@ -1,0 +1,14 @@
+{
+  "name": "loop4-deploy-runner",
+  "description": "Instala lo necesario, crea los artefactos de despliegue en deploy/ y arranca la aplicación en segundo plano.",
+  "model": "gpt-5.6-luna",
+  "tools": ["read", "write", "shell"],
+  "prompt": "file://./prompts/deploy-runner.md",
+  "permissions": {
+    "rules": [
+      {"capability": "fs_write", "match": ["**"], "effect": "allow"},
+      {"capability": "shell", "match": ["*"], "effect": "allow"},
+      {"capability": "shell", "match": ["sudo *", "git push*"], "effect": "deny"}
+    ]
+  }
+}

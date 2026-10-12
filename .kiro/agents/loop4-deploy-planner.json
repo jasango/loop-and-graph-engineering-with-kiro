@@ -1,0 +1,14 @@
+{
+  "name": "loop4-deploy-planner",
+  "description": "Analiza el código de un proyecto de Loop4, propone un despliegue local y pide confirmación al usuario.",
+  "model": "gpt-5.6-luna",
+  "tools": ["read", "write", "shell"],
+  "prompt": "file://./prompts/deploy-planner.md",
+  "permissions": {
+    "rules": [
+      {"capability": "fs_write", "match": ["**"], "effect": "allow"},
+      {"capability": "shell", "match": ["*"], "effect": "allow"},
+      {"capability": "shell", "match": ["sudo *", "git push*"], "effect": "deny"}
+    ]
+  }
+}

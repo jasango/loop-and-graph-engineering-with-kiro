@@ -1,0 +1,53 @@
+{
+  "name": "software-deploy",
+  "description": "Analiza el código de un proyecto de Loop4, propone un despliegue local, pide confirmación y lo despliega en la subcarpeta deploy entregando el enlace.",
+  "modelId": "gpt-5.6-luna",
+  "effortLevel": "medium",
+  "inputs": {
+    "project": "string"
+  },
+  "steps": [
+    {
+      "type": "step",
+      "id": "planner",
+      "agent": "loop4-deploy-planner",
+      "prompt": "Proyecto: {{project}}. Ruta física del proyecto: Loop4/{{project}}. Analiza el código, propón el despliegue local y pide confirmación al usuario según tu perfil.",
+      "completion": {
+        "completionSignal": "success"
+      },
+      "artifacts": {
+        "proposal": "Loop4/{{project}}/deploy/proposal.md"
+      }
+    },
+    {
+      "type": "repeat",
+      "id": "deploy-loop",
+      "maxIterations": 3,
+      "onMaxIterations": "pause",
+      "stopCondition": {
+        "fileCheck": {
+          "path": "Loop4/{{project}}/workflow-output/loop4-deploy-status.json",
+          "jsonPath": "deployed",
+          "value": true
+        }
+      },
+      "steps": [
+        {
+          "type": "step",
+          "id": "runner",
+          "agent": "loop4-deploy-runner",
+          "prompt": "Proyecto: {{project}}. Ruta física del proyecto: Loop4/{{project}}. Ejecuta el despliegue aprobado según tu perfil."
+        },
+        {
+          "type": "step",
+          "id": "verifier",
+          "agent": "loop4-deploy-verifier",
+          "prompt": "Proyecto: {{project}}. Ruta física del proyecto: Loop4/{{project}}. Comprueba el despliegue y actualiza el estado según tu perfil.",
+          "artifacts": {
+            "status": "Loop4/{{project}}/workflow-output/loop4-deploy-status.json"
+          }
+        }
+      ]
+    }
+  ]
+}

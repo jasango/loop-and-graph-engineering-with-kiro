@@ -1,0 +1,47 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&display=swap');
+
+:root {
+  color-scheme: dark;
+  --font-body: 'Nunito', ui-rounded, 'Avenir Next', system-ui, sans-serif;
+  --color-bg: #10132c;
+  --color-surface: #1b2045;
+  --color-surface-raised: #252c5a;
+  --color-surface-muted: #30386d;
+  --color-text: #f8f9ff;
+  --color-text-muted: #c6cbee;
+  --color-text-subtle: #9da5d2;
+  --color-primary: #8b5cf6;
+  --color-primary-strong: #a78bfa;
+  --color-secondary: #22d3ee;
+  --color-success: #34d399;
+  --color-success-bg: #123e3a;
+  --color-warning: #facc15;
+  --color-warning-bg: #4a3c12;
+  --color-danger: #fb7185;
+  --color-danger-bg: #4b1f35;
+  --color-focus: #67e8f9;
+  --color-border: rgba(255, 255, 255, 0.16);
+  --shadow-card: 0 1.5rem 3rem rgba(3, 5, 24, 0.32);
+  --shadow-glow: 0 0 2rem rgba(139, 92, 246, 0.24);
+  --radius-sm: 0.625rem;
+  --radius-md: 1rem;
+  --radius-lg: 1.5rem;
+  --content-max-width: 72rem;
+  --space-1: 0.25rem;
+  --space-2: 0.5rem;
+  --space-3: 0.75rem;
+  --space-4: 1rem;
+  --space-5: 1.5rem;
+  --space-6: 2rem;
+  --space-7: 3rem;
+  --transition-fast: 150ms ease;
+  --transition-normal: 250ms ease;
+}
+
+@media (prefers-contrast: more) {
+  :root {
+    --color-text-muted: #e6e9ff;
+    --color-text-subtle: #d5d9ff;
+    --color-border: rgba(255, 255, 255, 0.4);
+  }
+}

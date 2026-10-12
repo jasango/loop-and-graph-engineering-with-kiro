@@ -1,0 +1,12 @@
+{
+  "name": "loop4-project-namer",
+  "description": "Crea la carpeta del proyecto a partir de la idea y reinicia el estado del workflow de especificación.",
+  "model": "claude-haiku-4.5",
+  "tools": ["read", "write"],
+  "prompt": "file://./prompts/project-namer.md",
+  "permissions": {
+    "rules": [
+      {"capability": "fs_write", "match": ["**"], "effect": "allow"}
+    ]
+  }
+}

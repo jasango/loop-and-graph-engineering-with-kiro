@@ -1,0 +1,14 @@
+{
+  "name": "loop4-deploy-verifier",
+  "description": "Comprueba que la aplicación desplegada responde, decide PASS o FAIL, escribe el gate del loop de despliegue y entrega el enlace.",
+  "model": "gpt-5.6-luna",
+  "tools": ["read", "write", "shell"],
+  "prompt": "file://./prompts/deploy-verifier.md",
+  "permissions": {
+    "rules": [
+      {"capability": "fs_write", "match": ["**"], "effect": "allow"},
+      {"capability": "shell", "match": ["*"], "effect": "allow"},
+      {"capability": "shell", "match": ["sudo *", "git push*"], "effect": "deny"}
+    ]
+  }
+}

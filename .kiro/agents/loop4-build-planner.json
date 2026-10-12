@@ -1,0 +1,14 @@
+{
+  "name": "loop4-build-planner",
+  "description": "Convierte la especificación aprobada en un plan de implementación por olas paralelas y pide confirmación al usuario.",
+  "model": "gpt-5.6-luna",
+  "tools": ["read", "write", "shell"],
+  "prompt": "file://./prompts/build-planner.md",
+  "permissions": {
+    "rules": [
+      {"capability": "fs_write", "match": ["**"], "effect": "allow"},
+      {"capability": "shell", "match": ["*"], "effect": "allow"},
+      {"capability": "shell", "match": ["sudo *", "git push*"], "effect": "deny"}
+    ]
+  }
+}
