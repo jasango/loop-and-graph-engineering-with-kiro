@@ -1,0 +1,349 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Kiro CLI en acción: automatizando el desarrollo de software con Loop Engineering. Javier Santana, AWS Community Day Santiago de Compostela 2026.">
+  <title>Kiro CLI en acción · Loop Engineering</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="chrome">
+    <a class="brand" href="#slide-01">KIRO <span>LOOP ENGINEERING</span></a>
+    <div class="progress-wrap"><div id="progress" class="progress" role="progressbar" aria-label="Progreso" aria-valuemin="1" aria-valuemax="18"></div></div>
+    <p id="counter" class="counter" aria-live="polite">01 / 18</p>
+    <nav class="deck-nav" aria-label="Navegación"><button id="prev" type="button">Anterior</button><button id="next" type="button">Siguiente</button></nav>
+  </header>
+
+  <main id="deck">
+
+    <!-- 01 -->
+    <article class="slide slide-cover" id="slide-01" data-title="Kiro CLI en acción" tabindex="-1">
+      <p class="eyebrow">AWS Community Day · Santiago de Compostela · 17.10.2026</p>
+      <h1>Kiro CLI en acción: automatizando el desarrollo de software con Loop Engineering</h1>
+      <p class="lead">Cómo pasar de “pedirle cosas al agente una a una” a diseñar ciclos y flujos que se ejecutan, se verifican y se corrigen solos.</p>
+      <figure class="hero"><img src="assets/images/image-02.png" alt="Tarjeta de la charla: Javier Santana, AI-Augmented Software Developer, AWS Community Day Spain 2026 Galicia"></figure>
+    </article>
+
+    <!-- 02 -->
+    <article class="slide" id="slide-02" data-title="Un mismo harness, varias superficies" tabindex="-1">
+      <p class="eyebrow">Punto de partida</p>
+      <h1>Kiro ya no es solo un IDE: es el mismo harness en cuatro superficies</h1>
+      <p class="lead">Kiro nació hace año y medio con dos formas de trabajar: vibe coding y specs. Desde entonces ha añadido decenas de capacidades y nuevas formas de acceder a él.</p>
+      <div class="grid g4">
+        <div class="card"><h3>Kiro IDE</h3><p>Controlar el proceso desde la máquina del desarrollador.</p></div>
+        <div class="card hl"><h3>Kiro CLI</h3><p>Lo mismo desde terminal, y además automatizar CI/CD. <strong>Protagonista de esta charla.</strong></p></div>
+        <div class="card"><h3>Kiro Web</h3><p>Trabajar en la nube.</p></div>
+        <div class="card"><h3>Kiro Mobile</h3><p>Supervisar y tomar decisiones cómodamente desde el móvil.</p></div>
+      </div>
+      <aside class="note"><strong>Aparte: Kiro Crew.</strong> Entorno basado en Kiro para coordinar muchos agentes (inspirado en OpenClaw): ejecución planificada o por eventos, canales como Slack, WhatsApp o Telegram, memoria persistente y capacidad de automejora. Queda fuera del alcance de esta charla, igual que sus workflows.</aside>
+    </article>
+
+    <!-- 03 -->
+    <article class="slide" id="slide-03" data-title="Del prompt al loop" tabindex="-1">
+      <p class="eyebrow">El mapa</p>
+      <h1>Cada problema de los agentes ha generado su propia disciplina</h1>
+      <p class="lead">Todo empezó con el prompt engineering. Cada vez que hemos tenido que lograr que un agente se comporte como queremos, ha aparecido un nombre nuevo. Las dos últimas filas son el hilo de esta charla.</p>
+      <h2 class="grouplabel">Qué le damos al modelo</h2>
+      <div class="grid g3">
+        <div class="card"><h3>Prompt</h3><p>Optimizar las instrucciones de una llamada al modelo.</p></div>
+        <div class="card"><h3>Context</h3><p>Optimizar dinámicamente la ventana de contexto a lo largo de varias interacciones.</p></div>
+        <div class="card"><h3>Retrieval</h3><p>Optimizar cómo recuperamos los datos que dan conocimiento al modelo.</p></div>
+        <div class="card"><h3>Memory</h3><p>Gestionar la información compartida entre ventanas de contexto.</p></div>
+        <div class="card"><h3>Tool</h3><p>Acceso a herramientas y sistemas externos.</p></div>
+        <div class="card"><h3>Skill</h3><p>Capacidades especializadas y reutilizables.</p></div>
+      </div>
+      <h2 class="grouplabel">Cómo controlamos lo que hace</h2>
+      <div class="grid g4">
+        <div class="card hl"><h3>Loop</h3><p>Ciclos de ejecución, evaluación y corrección hasta un objetivo verificable o una condición de parada.</p></div>
+        <div class="card hl"><h3>Graph</h3><p>Tareas y agentes organizados en un grafo: dependencias, decisiones, ramas paralelas, flujo de control.</p></div>
+        <div class="card"><h3>Guardrail</h3><p>Controles, permisos y límites de ejecución.</p></div>
+        <div class="card"><h3>Harness</h3><p>El sistema completo que rodea al modelo para que ejecute tareas, guarde información, se coordine y verifique resultados.</p></div>
+      </div>
+    </article>
+
+    <!-- 04 -->
+    <article class="slide" id="slide-04" data-title="Loop frente a Graph" tabindex="-1">
+      <p class="eyebrow">Dos conceptos hermanos</p>
+      <h1>Loop repite hasta acertar; Graph ordena quién hace qué y cuándo</h1>
+      <div class="grid g2 compare">
+        <section class="card hl"><h2>Loop Engineering</h2>
+          <p>Se centra en <strong>iterar</strong> hasta lograr un objetivo verificable o llegar a una condición de parada.</p>
+          <p class="ex">Ejemplo: revisar y corregir hasta que las pruebas pasen.</p></section>
+        <section class="card hl"><h2>Graph Engineering</h2>
+          <p>Se centra en <strong>orquestar el flujo</strong>: pasos secuenciales o paralelos cuando sea posible, respetando las dependencias.</p>
+          <p class="ex">Ejemplo: especificar, construir y desplegar, con tres tareas de código en paralelo.</p></section>
+      </div>
+      <p class="lead">Se combinan: un grafo cuyos nodos contienen loops. Eso es exactamente lo que hacen los workflows de Kiro.</p>
+    </article>
+
+    <!-- 05 -->
+    <article class="slide" id="slide-05" data-title="Para qué sirven" tabindex="-1">
+      <p class="eyebrow">¿Para qué?</p>
+      <h1>¿De qué nos sirven Graphs y Loops en desarrollo con agentes?</h1>
+      <div class="grid g2">
+        <section class="card"><h2>Graphs: no pedir las cosas una a una</h2>
+          <p>Describes una serie de tareas encadenadas y el agente las recorre en orden, en paralelo cuando se puede, sin que tengas que lanzar cada paso a mano.</p></section>
+        <section class="card"><h2>Loops: iterar hasta cumplir una condición</h2>
+          <p>Los loops viven dentro de los workflows. Permiten ciclos de revisión y mejora que no terminan hasta que se cumple algo comprobable, por ejemplo que la ejecución de las pruebas sea exitosa.</p></section>
+      </div>
+      <p class="lead">Resultado: menos supervisión paso a paso, y las personas intervienen donde aportan más valor (aprobar, decidir, desbloquear).</p>
+    </article>
+
+    <!-- 06 -->
+    <article class="slide" id="slide-06" data-title="Cómo es un loop funcional" tabindex="-1">
+      <p class="eyebrow">Criterios de diseño</p>
+      <h1>Un loop funcional no es repetir llamadas al LLM: es controlar la trayectoria hasta un resultado verificable</h1>
+      <p class="lead">Debe permitir que el agente trabaje solo, compruebe si progresa, corrija errores y pare cuando toque, sin gastar recursos de más ni perder el objetivo.</p>
+      <figure><img src="assets/images/image-05.png" alt="Diagrama Development Loop: tarea de desarrollo y configuración inicial entran en un ciclo de cuatro pasos (analizar, implementar, validar, evaluar), con human-in-the-loop opcional, y salen a un resultado final: completado, máximo de iteraciones, en espera de intervención humana o fallido."><figcaption>El ciclo analizar → implementar → validar → evaluar, con parada por éxito, tope de iteraciones, intervención humana o fallo.</figcaption></figure>
+      <h2>Las 10 características fundamentales</h2>
+      <div class="table-wrap"><table>
+        <thead><tr><th>Característica</th><th>Qué debe garantizar</th></tr></thead>
+        <tbody>
+        <tr><td>1. Objetivo verificable</td><td>Criterios de aceptación claros; no depender de que el LLM diga “ya está”.</td></tr>
+        <tr><td>2. Observación del entorno</td><td>Estado real de la tarea mediante herramientas y evidencias externas.</td></tr>
+        <tr><td>3. Ejecución adaptativa</td><td>Elegir la siguiente acción según objetivo, estado y resultados previos.</td></tr>
+        <tr><td>4. Verificación de resultados</td><td>Comprobar el efecto de cada acción, mejor con verificaciones deterministas.</td></tr>
+        <tr><td>5. Medición del progreso</td><td>Detectar si se avanza o si se repiten acciones sin mejora.</td></tr>
+        <tr><td>6. Recuperación de errores</td><td>Reintentar, cambiar de estrategia, revertir, pedir ayuda o abandonar.</td></tr>
+        <tr><td>7. Gestión del estado</td><td>Conservar objetivo, decisiones y trabajo verificado entre iteraciones.</td></tr>
+        <tr><td>8. Terminación controlada</td><td>Condiciones explícitas de fin: éxito, fallo, bloqueo, cancelación o recursos agotados.</td></tr>
+        <tr><td>9. Control de recursos y seguridad</td><td>Límite de iteraciones, tiempo, tokens, costes y acciones; aprobaciones cuando haga falta.</td></tr>
+        <tr><td>10. Observabilidad y trazabilidad</td><td>Registrar decisiones, herramientas, verificaciones, errores y estado para mejorar el loop.</td></tr>
+        </tbody></table></div>
+      <p class="small">Consistentes con patrones de agentes de Anthropic, los controles del OpenAI Agents SDK y propuestas recientes de Loop Engineering.</p>
+    </article>
+
+    <!-- 07 -->
+    <article class="slide" id="slide-07" data-title="Dos caminos en Kiro" tabindex="-1">
+      <p class="eyebrow">Hoja de ruta de la charla</p>
+      <h1>En Kiro hay dos caminos para construir loops y tres ejemplos con demo, de menos a más</h1>
+      <div class="grid g2">
+        <section class="card"><h2>Programático</h2>
+          <p>Un script (<code>sh</code>) llama a <code>kiro-cli</code> y es <strong>el script</strong> quien controla el flujo con <code>while</code>, <code>if</code> y códigos de salida.</p>
+          <p class="ex">Loop 1 y Loop 2</p></section>
+        <section class="card hl"><h2>Declarativo: Kiro Workflows</h2>
+          <p>Se describe el grafo en un fichero JSON/YAML y es <strong>el runtime de Kiro</strong> quien controla <code>repeat</code>, <code>parallel</code> y las condiciones de parada.</p>
+          <p class="ex">Loop 4 en la charla (Loop 3 está en el repositorio)</p></section>
+      </div>
+      <ol class="ladder">
+        <li><strong>Loop 1 · Hello World.</strong> Un solo agente, una verificación determinista.</li>
+        <li><strong>Loop 2 · Refinamiento de artículos.</strong> Tres agentes especializados con modelos distintos y tope de 5 iteraciones.</li>
+        <li class="repo-only"><strong>Loop 3 · El mismo loop, como workflow</strong> <span class="tag">solo en el repositorio</span> Receta <code>refine-article</code>: el runtime repite y para cuando un fichero de estado dice <code>approved: true</code>. No se muestra en la charla por tiempo; la demo de Workflows es Loop 4.</li>
+        <li><strong>Loop 4 · Software completo.</strong> Tres workflows encadenados: especificar, construir y desplegar.</li>
+      </ol>
+    </article>
+
+    <!-- 08 -->
+    <article class="slide" id="slide-08" data-title="Loop 1" tabindex="-1">
+      <p class="eyebrow">Loop 1 · Programático</p>
+      <h1>Hello World: kiro-cli dentro de un script, verificado por el propio script</h1>
+      <figure class="video">
+        <video controls preload="metadata" playsinline poster="assets/video/poster-01.jpg" aria-describedby="cap-01"><source src="assets/video/demo-01.mp4" type="video/mp4"><track kind="captions" srclang="es" src="assets/video/captions-09.vtt" label="Español" default></video>
+        <figcaption id="cap-01"><strong>Demo 1 (23 s).</strong> Se ejecuta <code>./simple-loop.sh</code>: el agente lee y escribe <code>target.txt</code> y el script imprime <code>PASS</code>.</figcaption>
+      </figure>
+      <div class="split">
+        <div>
+          <p class="lead">Se usa <code>kiro-cli</code> con las primitivas del sistema operativo. El agente hace el trabajo; el script comprueba el resultado.</p>
+          <ul class="bullets">
+            <li><code>--no-interactive</code>: ejecuta Kiro CLI sin preguntas ni interfaz interactiva, imprescindible dentro de un script.</li>
+            <li><code>--trust-tools=fs_read,fs_write</code>: autoriza solo esas herramientas durante la ejecución (principio de mínimo privilegio).</li>
+            <li>Cuenta las líneas de <code>target.txt</code> antes y después; si hay una más y contiene <code>Hello, world!</code>, imprime <code>PASS</code>; si no, <code>ERROR</code>.</li>
+          </ul>
+          <figure><img src="assets/images/image-06.png" alt="Comando kiro-cli chat con --no-interactive y --trust-tools=fs_read,fs_write que pide añadir la línea Hello, world! a target.txt"></figure>
+        </div>
+        <figure><img class="tall" src="assets/images/image-08.png" alt="Diagrama de flujo de Loop1: ejecutar hello_world_loop.sh, comprobar que kiro-cli está disponible, ejecutar kiro-cli chat, añadir Hello world a target.txt, comprobar que la línea se añadió: PASS si sí, ERROR si no."></figure>
+      </div>
+      <p class="small">Lección: el loop tiene un criterio de éxito comprobable por código, no por la opinión del LLM.</p>
+    </article>
+
+    <!-- 09 -->
+    <article class="slide" id="slide-09" data-title="Loop 2" tabindex="-1">
+      <p class="eyebrow">Loop 2 · Programático</p>
+      <h1>Refinamiento de artículos: un agente crea, otro revisa y otro mejora, hasta 5 veces</h1>
+      <div class="split">
+        <div>
+          <p class="lead">Tres agentes de Kiro CLI con una responsabilidad cada uno y el modelo adecuado para cada tarea.</p>
+          <div class="table-wrap"><table>
+            <thead><tr><th>Agente</th><th>Modelo</th><th>Papel</th></tr></thead>
+            <tbody>
+            <tr><td><code>loop2-article-creator</code></td><td>Qwen 3</td><td>Escribe la primera versión (menos de 100 palabras).</td></tr>
+            <tr><td><code>loop2-article-reviewer</code></td><td>Haiku 4.5</td><td>Evalúa con métricas simples y responde <code>APPROVED</code> o <code>REJECTED</code>.</td></tr>
+            <tr><td><code>loop2-article-improver</code></td><td>Haiku 4.5</td><td>Recibe tema, artículo actual y revisión anterior, y devuelve una versión mejor.</td></tr>
+            </tbody></table></div>
+          <ul class="bullets">
+            <li>Cada agente se invoca con <code>--no-interactive --agent &lt;nombre&gt;</code>; su salida se captura en variables del shell, sin ficheros de trabajo.</li>
+            <li>El <code>while</code> del script lleva el contador y decide: <code>APPROVED</code> termina con <code>PASS</code>; tras 5 iteraciones sin aprobar termina con error.</li>
+            <li>Separar creador y revisor evita que el agente se califique a sí mismo.</li>
+          </ul>
+          <figure><img src="assets/images/image-13.png" alt="Comando: kiro-cli chat --no-interactive --agent loop2-article-creator con el tema como argumento"></figure>
+        </div>
+        <figure><img class="tall" src="assets/images/image-12.png" alt="Diagrama de flujo de Loop2: inicio con tema, creator, reviewer; si APPROVED fin; si REJECTED, improver con artículo y revisión anterior y vuelta al reviewer, hasta máximo 5 iteraciones."></figure>
+      </div>
+      <details class="more"><summary>Ver las definiciones de los agentes</summary>
+        <div class="grid g3">
+          <figure><img src="assets/images/image-09.png" alt="Perfil article-creator.json con modelo qwen3-coder-next"><figcaption>creator</figcaption></figure>
+          <figure><img src="assets/images/image-10.png" alt="Perfil article-reviewer.json con modelo claude-haiku-4.5"><figcaption>reviewer</figcaption></figure>
+          <figure><img src="assets/images/image-11.png" alt="Perfil article-improver.json con modelo claude-haiku-4.5"><figcaption>improver</figcaption></figure>
+        </div>
+      </details>
+    </article>
+
+    <!-- 10 -->
+    <article class="slide" id="slide-10" data-title="Demo Loop 2" tabindex="-1">
+      <p class="eyebrow">Demo · Loop 2</p>
+      <h1>El loop en marcha: el revisor rechaza, el improver corrige y el tope de 5 iteraciones protege el coste</h1>
+      <p class="lead">Se ejecuta <code>./refine_article_loop.sh "¿Qué es Loop Engineering"</code>. Cada iteración imprime su número, el artículo y la revisión del reviewer.</p>
+      <figure class="video">
+        <video controls preload="metadata" playsinline poster="assets/video/poster-02.jpg" aria-describedby="cap-02"><source src="assets/video/demo-02.mp4" type="video/mp4"><track kind="captions" srclang="es" src="assets/video/captions-11.vtt" label="Español" default></video>
+        <figcaption id="cap-02"><strong>Demo 2 (1 min).</strong> Ejecución del script de refinamiento de artículos.</figcaption>
+      </figure>
+      <aside class="note"><strong>Qué se ve en la demo:</strong> el reviewer rechaza versiones por superar las 100 palabras (102, 106…) o por originalidad baja (5/10, mínimo 6). En la iteración 5 sigue sin aprobarse y el script termina con <code>ERROR: el artículo no fue aprobado en 5 iteraciones</code>. Un loop también debe saber <strong>rendirse</strong>: es la terminación controlada y el control de recursos de la slide 6.</aside>
+      <p class="small">Límite del enfoque programático: toda la lógica de control (contador, parada, errores) vive en el script y hay que programarla a mano. Los workflows la ofrecen declarativa.</p>
+    </article>
+
+    <!-- 11 -->
+    <article class="slide" id="slide-11" data-title="Kiro Workflows" tabindex="-1">
+      <p class="eyebrow">Camino declarativo</p>
+      <h1>Un Workflow es un grafo de pasos de agente que personas y agentes pueden leer y crear</h1>
+      <div class="grid g2">
+        <div class="card"><h3>Qué contiene</h3><p>Nodos que invocan agentes (cada uno con contexto independiente), secuencias, loops y ramas paralelas.</p></div>
+        <div class="card"><h3>Contexto fresco por paso</h3><p>Cada paso corre en su propia sesión. Así un revisor evalúa el trabajo sin heredar el razonamiento de quien lo escribió.</p></div>
+        <div class="card"><h3>Cómo se crean</h3><p>Los puede generar Kiro para atender una petición, o los puedes definir tú con lenguaje natural o a mano.</p></div>
+        <div class="card"><h3>Dónde viven</h3><p>Se llaman recetas (<em>recipes</em>) y son ficheros JSON o YAML en <code>.kiro/workflows</code>. Funcionan de forma similar en Kiro IDE, CLI y Web.</p></div>
+      </div>
+      <h2>Lo que el runtime garantiza</h2>
+      <ul class="bullets">
+        <li><code>repeat</code> con <code>maxIterations</code> y <code>onMaxIterations: pause</code> como freno de seguridad.</li>
+        <li><code>stopCondition</code> con <code>fileCheck</code>: el loop para cuando un campo de un JSON (por ejemplo <code>approved</code>) vale <code>true</code>.</li>
+        <li><code>parallel</code> para ramas simultáneas y <code>completion</code> para pausar un paso a la espera de una persona.</li>
+      </ul>
+      <p class="small">Lo que no garantiza: las rutas de escritura y el reparto del trabajo siguen dependiendo de los prompts de los agentes.</p>
+    </article>
+
+    <!-- 12 -->
+    <article class="slide" id="slide-12" data-title="SDLC con tres workflows" tabindex="-1">
+      <p class="eyebrow">Loop 4 · Visión general</p>
+      <h1>Todo el SDLC como un grafo de tres workflows, cada uno con su propio loop</h1>
+      <ol class="flow">
+        <li><span class="step">1</span><h3>Specs Creation</h3><code>software-spec</code><p>Loop de <strong>refinamiento</strong>: analista y revisor iteran hasta que la especificación está lista.</p></li>
+        <li class="arrow" aria-hidden="true">→</li>
+        <li><span class="step">2</span><h3>Code Generation</h3><code>software-build</code><p>Loop de <strong>pruebas y corrección</strong>: construye por olas, con carriles en paralelo.</p></li>
+        <li class="arrow" aria-hidden="true">→</li>
+        <li><span class="step">3</span><h3>Code Deploy</h3><code>software-deploy</code><p>Loop de <strong>verificación</strong>: instala, arranca y comprueba que la app responde.</p></li>
+      </ol>
+      <ul class="bullets">
+        <li>Los tres comparten una carpeta física por proyecto en <code>Loop4/&lt;proyecto&gt;/</code>, que es el hilo que une un workflow con el siguiente.</li>
+        <li>El runtime controla la repetición (<code>repeat</code>) y la parada (<code>fileCheck</code>); cada agente solo hace <strong>una vuelta</strong>.</li>
+        <li>Las personas participan en los puntos de decisión: responden al analista y confirman el plan y la propuesta de despliegue.</li>
+      </ul>
+    </article>
+
+    <!-- 13 -->
+    <article class="slide" id="slide-13" data-title="software-spec" tabindex="-1">
+      <p class="eyebrow">Workflow 1 · software-spec</p>
+      <h1>Especificación: un analista pregunta, un revisor juzga y solo se avanza con tu aprobación</h1>
+      <div class="split">
+        <div>
+          <ol class="steps">
+            <li>El <strong>namer</strong> crea la carpeta del proyecto en <code>Loop4/</code> a partir de la idea.</li>
+            <li>La receta define workflow, agente, nivel de esfuerzo y prompt inicial.</li>
+            <li>Un <code>repeat</code> con máximo de 10 rondas se detiene cuando <code>approved</code> es <code>true</code>.</li>
+            <li>El <strong>Analyst</strong> hace hasta 5 preguntas por ronda, busca en la web para cubrir huecos y reescribe <code>spec.md</code>.</li>
+            <li>El <strong>Reviewer</strong> valora solo el documento y emite un juicio: ¿está lista para implementarse?</li>
+            <li>La aprobación es doble: <code>approved = revisor APPROVED &amp;&amp; usuario aprueba</code>, escrita por el agente independiente.</li>
+          </ol>
+          <p class="small">Cada ronda del analista es una sesión nueva: su memoria son <code>spec.md</code>, la conversación y la última revisión.</p>
+        </div>
+        <div>
+          <figure><img src="assets/images/image-15.png" alt="Comando /workflow-run software-spec con la idea: aplicación web monousuario tipo Kahoot, sin autenticación ni base de datos, almacenamiento en JSON local, preguntas de cuatro opciones con 15 segundos, puntuación y resultados, colores que cambian al acabarse el tiempo, 20 preguntas sobre Kiro."><figcaption>Lanzamiento: <code>/workflow-run software-spec idea=…</code></figcaption></figure>
+          <figure><img src="assets/images/image-19.png" alt="Fragmento de software-spec.workflow.json: inputs, paso namer, repeat spec-loop con maxIterations 10, stopCondition fileCheck sobre approved, pasos analyst y reviewer."><figcaption>La receta: namer → repeat(analyst, reviewer) con <code>fileCheck</code>.</figcaption></figure>
+        </div>
+      </div>
+    </article>
+
+    <!-- 14 -->
+    <article class="slide" id="slide-14" data-title="software-build" tabindex="-1">
+      <p class="eyebrow">Workflow 2 · software-build</p>
+      <h1>Construcción: un plan por olas, tres carriles de código en paralelo y pruebas antes de avanzar</h1>
+      <figure><img src="assets/images/image-20.png" alt="Diagrama de software-build: project slug, build-planner con plan por olas, confirmación del usuario (cambios vuelven al planner), ola actual en paralelo con tres build-coder en carriles 1, 2 y 3, build-verifier que ejecuta todas las pruebas y decide: PASS pasa a la siguiente ola, FAIL repite la ola, done termina con software terminado."></figure>
+      <ul class="bullets">
+        <li>El <strong>planner</strong> convierte la spec en <code>plan.md</code> (para personas) y <code>plan.json</code> (para agentes) y <strong>pide tu confirmación</strong>; si pides cambios, rehace el plan.</li>
+        <li>En cada ola trabajan tres <strong>coders</strong> a la vez. El plan asigna cada fichero a un único grupo para que no haya conflictos; si un carril no tiene grupo, termina sin hacer nada.</li>
+        <li>El <strong>verifier</strong> ejecuta todas las pruebas: <strong>PASS</strong> avanza de ola, <strong>FAIL</strong> repite la ola y los carriles reciben la salida de las pruebas para corregir.</li>
+        <li>Freno de seguridad: máximo de 15 iteraciones con pausa al agotarlas.</li>
+      </ul>
+      <p class="small">El paralelismo no garantiza menos tiempo total; aquí sirve sobre todo para aislar el trabajo de cada carril.</p>
+    </article>
+
+    <!-- 15 -->
+    <article class="slide" id="slide-15" data-title="software-deploy" tabindex="-1">
+      <p class="eyebrow">Workflow 3 · software-deploy</p>
+      <h1>Despliegue: se propone, tú confirmas, se arranca y se comprueba que responde</h1>
+      <figure><img src="assets/images/image-21.png" alt="Diagrama de software-deploy: project slug, deploy-planner que lee el código y propone, confirmación del usuario, deploy-runner que instala, crea artefactos y arranca, deploy-verifier que comprueba la URL; si deployed es No vuelve al runner, si es Sí entrega el enlace a la app."></figure>
+      <ul class="bullets">
+        <li>El <strong>planner</strong> lee el código y escribe <code>deploy/proposal.md</code>: stack, qué instalará, comandos, puerto y URL. Tú confirmas.</li>
+        <li>El <strong>runner</strong> instala, crea <code>start.sh</code> y <code>stop.sh</code> en <code>deploy/</code> y arranca la app en segundo plano. No modifica el código de la app.</li>
+        <li>El <strong>verifier</strong> comprueba que el proceso vive y que la URL responde. Si falla, el runner reintenta con el informe (hasta 3 intentos).</li>
+        <li>Al terminar recibes el enlace, por ejemplo <code>http://127.0.0.1:3000/</code>.</li>
+      </ul>
+      <aside class="note"><strong>Seguridad:</strong> las apps generadas no tienen autenticación, por eso el despliegue es solo local y escucha en <code>127.0.0.1</code>.</aside>
+    </article>
+
+    <!-- 16 -->
+    <article class="slide" id="slide-16" data-title="Demo SDLC" tabindex="-1">
+      <p class="eyebrow">Demo · de la idea a la app</p>
+      <h1>Una idea en una frase se convierte en una aplicación desplegada</h1>
+      <p class="lead">Ejemplo: una aplicación web monousuario tipo Kahoot, sin autenticación ni base de datos, con 20 preguntas sobre Kiro y colores que cambian al acabarse el tiempo.</p>
+      <figure class="video">
+        <video controls preload="metadata" playsinline poster="assets/video/poster-03.jpg" aria-describedby="cap-03"><source src="assets/video/demo-03.mp4" type="video/mp4"><track kind="captions" srclang="es" src="assets/video/captions-18.vtt" label="Español" default></video>
+        <figcaption id="cap-03"><strong>Demo 3 (4 min 18 s) · Loop 4.</strong> Los workflows <code>software-spec</code>, <code>software-build</code> y <code>software-deploy</code> desde Kiro IDE, con la app resultante en <code>127.0.0.1:5173</code>.</figcaption>
+      </figure>
+      <aside class="note"><strong>Qué se ve en la demo:</strong> el analista pausado esperando tus respuestas en la ronda 1 de <code>software-spec</code>, el <code>plan.md</code> por olas y carriles que genera <code>software-build</code>, y el juego terminado (“¡Buen trabajo!”, puntuación y aciertos). Por tiempo, la demo corresponde a Loop 4 completo; Loop 3 solo existe en el repositorio.</aside>
+    </article>
+
+    <!-- 17 -->
+    <article class="slide" id="slide-17" data-title="Conclusiones" tabindex="-1">
+      <p class="eyebrow">Conclusiones</p>
+      <h1>Ya sabemos hacer loops con Kiro</h1>
+      <figure class="hero"><img src="assets/images/image-23.png" alt="Dos desarrolladores celebrando frente a una pantalla con código y una aplicación terminada, con un robot asistente brillando sobre ellos"></figure>
+      <div class="grid g2">
+        <div class="card"><h3>Ya no basta optimizar respuestas</h3><p>Hay que diseñar sistemas completos: modelos que ejecutan tareas, guardan información, se coordinan y verifican resultados.</p></div>
+        <div class="card"><h3>Empieza simple</h3><p>Un script con <code>--no-interactive</code> y una comprobación determinista ya es un loop (Loop 1 y 2).</p></div>
+        <div class="card"><h3>Pasa a Workflows cuando necesites más</h3><p>Paralelismo, pausas con humanos, contexto fresco por paso y paradas declarativas (Loop 4; Loop 3 en el repositorio).</p></div>
+        <div class="card"><h3>Verifica con evidencias</h3><p>Criterio de éxito comprobable, revisor independiente, tope de iteraciones y personas en las decisiones.</p></div>
+      </div>
+    </article>
+
+    <!-- 18 -->
+    <article class="slide" id="slide-18" data-title="Recursos y gracias" tabindex="-1">
+      <p class="eyebrow">Para seguir aprendiendo</p>
+      <h1>Todo el código de la charla está en el repositorio: loop-and-graph-engineering-with-kiro</h1>
+      <div class="split">
+        <div>
+          <div class="table-wrap"><table>
+            <thead><tr><th>Carpeta</th><th>Qué contiene</th></tr></thead>
+            <tbody>
+            <tr><td><code>Loop1/</code></td><td>Hello World: script con <code>--no-interactive</code> y verificación.</td></tr>
+            <tr><td><code>Loop2/</code></td><td>Refinamiento de artículos con tres agentes y un <code>while</code>.</td></tr>
+            <tr><td><code>Loop3/</code></td><td>El mismo loop como Kiro Workflow (<code>refine-article</code>). Solo en el repo, no se presenta en la charla.</td></tr>
+            <tr><td><code>Loop4/</code></td><td>Desarrollo de software con <code>software-spec</code>, <code>-build</code> y <code>-deploy</code>.</td></tr>
+            <tr><td><code>.kiro/</code></td><td>Agentes, prompts y recetas de workflow.</td></tr>
+            </tbody></table></div>
+          <h2>Documentación oficial</h2>
+          <ul class="bullets">
+            <li><a href="https://kiro.dev/docs/workflows.md">Workflows</a> y <a href="https://kiro.dev/docs/workflows/authoring.md">cómo escribirlos</a></li>
+            <li><a href="https://kiro.dev/docs/custom-agents/creating.md">Crear agentes personalizados</a></li>
+            <li><a href="https://kiro.dev/llms.txt">Índice de documentación de Kiro</a></li>
+          </ul>
+        </div>
+        <figure><img class="tall" src="assets/images/image-24.png" alt="Página de GitHub del repositorio loop-and-graph-engineering-with-kiro con las carpetas .kiro, Loop1, Loop2, Loop3 y Loop4"></figure>
+      </div>
+      <p class="thanks">¡Muchas gracias! · Javier Santana · AWS Community Day Santiago de Compostela 2026</p>
+    </article>
+
+  </main>
+  <footer class="index-bar"><nav id="slide-index" aria-label="Índice de slides"></nav><p>← → · PageUp/PageDown · Home/End</p></footer>
+  <script src="app.js"></script>
+</body>
+</html>

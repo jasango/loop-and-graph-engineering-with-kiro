@@ -1,0 +1,4 @@
+WEBVTT
+
+00:00.000 --> 01:02.000
+Demostración de Loop 2: refine_article_loop.sh con el tema "¿Qué es Loop Engineering". Cada iteración muestra artículo y revisión (REJECTED por superar 100 palabras o por originalidad). Tras 5 iteraciones sin aprobar, el loop termina con error.

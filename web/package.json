@@ -1,8 +1,0 @@
-{
-  "name": "kiro-loop-engineering-deck",
-  "private": true,
-  "type": "module",
-  "engines": { "node": ">=22" },
-  "scripts": { "smoke": "node tests/smoke.mjs --base http://127.0.0.1:4173 --out artifacts/smoke" },
-  "devDependencies": { "playwright": "1.52.0" }
-}
