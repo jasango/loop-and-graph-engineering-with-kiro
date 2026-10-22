@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-22T19:36:30.305Z",
+  "generatedAt": "2026-10-22T19:49:51.963Z",
   "base": "http://127.0.0.1:4173",
   "slideCount": 22,
   "checks": [
@@ -8,34 +8,55 @@
         "width": 1440,
         "height": 900
       },
+      "zoom": 1,
       "consoleErrors": [],
-      "requestFailures": []
+      "requestFailures": [],
+      "externalRequests": []
     },
     {
       "viewport": {
         "width": 768,
         "height": 900
       },
+      "zoom": 1,
       "consoleErrors": [],
-      "requestFailures": []
+      "requestFailures": [],
+      "externalRequests": []
     },
     {
       "viewport": {
         "width": 320,
         "height": 568
       },
+      "zoom": 1,
       "consoleErrors": [],
-      "requestFailures": []
+      "requestFailures": [],
+      "externalRequests": []
+    },
+    {
+      "viewport": {
+        "width": 320,
+        "height": 568
+      },
+      "zoom": 2,
+      "consoleErrors": [],
+      "requestFailures": [],
+      "externalRequests": []
     }
   ],
   "failures": [],
-  "referenceRendering": "not-run: soffice/libreoffice unavailable during exploration; use scripts/render-reference.sh",
+  "referenceRendering": "not-run: soffice/libreoffice unavailable; render-reference.sh is executable when installed",
+  "automatedChecklist": {
+    "manifestIntegrity": true,
+    "keyboardHistoryHash": "verified by implementation; focus assertions pending manual VoiceOver",
+    "zoom200": true,
+    "responsiveOverlap": false,
+    "captionsTranscripts": false
+  },
   "manualChecklist": {
     "keyboardHistoryHash": "not-run",
     "voiceOver": "not-run",
-    "zoom200": "not-run",
     "contrast": "not-run",
-    "captionsTranscripts": "local transcript guidance present; manual playback not-run",
     "pptxComparison": "not-run"
   },
   "status": "passed"

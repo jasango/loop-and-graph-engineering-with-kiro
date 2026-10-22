@@ -1,0 +1,7 @@
+WEBVTT
+
+00:00.000 --> 00:08.000
+Demostración del loop programático con Kiro CLI.
+
+00:08.000 --> 00:18.000
+El script ejecuta el agente, observa el resultado y repite el ciclo hasta completar la condición de salida.

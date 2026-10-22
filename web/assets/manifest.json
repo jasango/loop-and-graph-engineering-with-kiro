@@ -913,6 +913,16 @@
             "from": "node-10-06",
             "to": "node-10-07",
             "kind": "sequence"
+          },
+          {
+            "from": "node-10-05",
+            "to": "node-10-06",
+            "kind": "decision"
+          },
+          {
+            "from": "node-10-06",
+            "to": "node-10-04",
+            "kind": "loop-return"
           }
         ],
         "order": [
@@ -924,7 +934,11 @@
           "node-10-06",
           "node-10-07"
         ],
-        "branches": []
+        "branches": [
+          {
+            "label": "Corregir o continuar → Ejecutar agente"
+          }
+        ]
       }
     },
     {
@@ -1202,17 +1216,17 @@
           {
             "from": "node-13-02",
             "to": "node-13-03",
-            "kind": "sequence"
+            "kind": "recipe"
           },
           {
-            "from": "node-13-03",
+            "from": "node-13-01",
             "to": "node-13-04",
-            "kind": "sequence"
+            "kind": "branch"
           },
           {
             "from": "node-13-04",
             "to": "node-13-05",
-            "kind": "sequence"
+            "kind": "recipe"
           },
           {
             "from": "node-13-05",
@@ -1222,7 +1236,7 @@
           {
             "from": "node-13-06",
             "to": "node-13-07",
-            "kind": "sequence"
+            "kind": "branch"
           },
           {
             "from": "node-13-07",
@@ -1237,7 +1251,7 @@
           {
             "from": "node-13-09",
             "to": "node-13-10",
-            "kind": "sequence"
+            "kind": "recipe"
           }
         ],
         "order": [
@@ -1252,7 +1266,14 @@
           "node-13-09",
           "node-13-10"
         ],
-        "branches": []
+        "branches": [
+          {
+            "label": "Specs Creation ∥ Code Generation"
+          },
+          {
+            "label": "Code ∥ Deploy"
+          }
+        ]
       }
     },
     {
@@ -1490,6 +1511,21 @@
             "from": "node-15-08",
             "to": "node-15-09",
             "kind": "sequence"
+          },
+          {
+            "from": "node-15-05",
+            "to": "node-15-06",
+            "kind": "sequence"
+          },
+          {
+            "from": "node-15-07",
+            "to": "node-15-05",
+            "kind": "review-loop"
+          },
+          {
+            "from": "node-15-09",
+            "to": "node-15-07",
+            "kind": "review-loop"
           }
         ],
         "order": [
@@ -1503,7 +1539,11 @@
           "node-15-08",
           "node-15-09"
         ],
-        "branches": []
+        "branches": [
+          {
+            "label": "Analyst ∥ Reviewer"
+          }
+        ]
       }
     },
     {
@@ -1582,6 +1622,11 @@
             "from": "node-16-03",
             "to": "node-16-04",
             "kind": "sequence"
+          },
+          {
+            "from": "node-16-04",
+            "to": "node-16-02",
+            "kind": "test-loop"
           }
         ],
         "order": [
@@ -1590,7 +1635,11 @@
           "node-16-03",
           "node-16-04"
         ],
-        "branches": []
+        "branches": [
+          {
+            "label": "Code Generation → Testing and Fixing"
+          }
+        ]
       }
     },
     {
@@ -1678,6 +1727,11 @@
             "from": "node-17-04",
             "to": "node-17-05",
             "kind": "sequence"
+          },
+          {
+            "from": "node-17-04",
+            "to": "node-17-01",
+            "kind": "return"
           }
         ],
         "order": [
@@ -1687,7 +1741,11 @@
           "node-17-04",
           "node-17-05"
         ],
-        "branches": []
+        "branches": [
+          {
+            "label": "Deploy ∥ Testing and Fixing"
+          }
+        ]
       }
     },
     {

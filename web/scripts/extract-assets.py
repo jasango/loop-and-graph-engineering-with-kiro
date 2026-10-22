@@ -97,8 +97,24 @@ def model(index: int) -> dict:
     labels = MODEL_LABELS.get(index, [])
     nodes = [{"id": f"node-{index:02d}-{n:02d}", "label": label} for n, label in enumerate(labels, 1)]
     relations = [{"from": nodes[n - 1]["id"], "to": nodes[n]["id"], "kind": "sequence"} for n in range(1, len(nodes))]
+    branches = []
+    if index == 10:
+        relations += [{"from": nodes[4]["id"], "to": nodes[5]["id"], "kind": "decision"}, {"from": nodes[5]["id"], "to": nodes[3]["id"], "kind": "loop-return"}]
+        branches = [{"label": "Corregir o continuar → Ejecutar agente"}]
+    elif index == 13:
+        relations = [{"from": nodes[0]["id"], "to": nodes[1]["id"], "kind": "sequence"}, {"from": nodes[1]["id"], "to": nodes[2]["id"], "kind": "recipe"}, {"from": nodes[0]["id"], "to": nodes[3]["id"], "kind": "branch"}, {"from": nodes[3]["id"], "to": nodes[4]["id"], "kind": "recipe"}, {"from": nodes[4]["id"], "to": nodes[5]["id"], "kind": "sequence"}, {"from": nodes[5]["id"], "to": nodes[6]["id"], "kind": "branch"}, {"from": nodes[6]["id"], "to": nodes[7]["id"], "kind": "sequence"}, {"from": nodes[7]["id"], "to": nodes[8]["id"], "kind": "sequence"}, {"from": nodes[8]["id"], "to": nodes[9]["id"], "kind": "recipe"}]
+        branches = [{"label": "Specs Creation ∥ Code Generation"}, {"label": "Code ∥ Deploy"}]
+    elif index == 15:
+        relations += [{"from": nodes[4]["id"], "to": nodes[5]["id"], "kind": "sequence"}, {"from": nodes[6]["id"], "to": nodes[4]["id"], "kind": "review-loop"}, {"from": nodes[8]["id"], "to": nodes[6]["id"], "kind": "review-loop"}]
+        branches = [{"label": "Analyst ∥ Reviewer"}]
+    elif index == 16:
+        relations += [{"from": nodes[3]["id"], "to": nodes[1]["id"], "kind": "test-loop"}]
+        branches = [{"label": "Code Generation → Testing and Fixing"}]
+    elif index == 17:
+        relations += [{"from": nodes[3]["id"], "to": nodes[0]["id"], "kind": "return"}]
+        branches = [{"label": "Deploy ∥ Testing and Fixing"}]
     return {"kind": "workflow" if index in {10, 13, 14, 15, 16, 17} else "content", "nodes": nodes, "relations": relations,
-            "order": [node["id"] for node in nodes], "branches": []}
+            "order": [node["id"] for node in nodes], "branches": branches}
 
 
 def extract(source: Path) -> None:
