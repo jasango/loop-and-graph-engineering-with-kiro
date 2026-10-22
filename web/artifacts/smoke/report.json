@@ -1,0 +1,42 @@
+{
+  "generatedAt": "2026-10-22T19:36:30.305Z",
+  "base": "http://127.0.0.1:4173",
+  "slideCount": 22,
+  "checks": [
+    {
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "consoleErrors": [],
+      "requestFailures": []
+    },
+    {
+      "viewport": {
+        "width": 768,
+        "height": 900
+      },
+      "consoleErrors": [],
+      "requestFailures": []
+    },
+    {
+      "viewport": {
+        "width": 320,
+        "height": 568
+      },
+      "consoleErrors": [],
+      "requestFailures": []
+    }
+  ],
+  "failures": [],
+  "referenceRendering": "not-run: soffice/libreoffice unavailable during exploration; use scripts/render-reference.sh",
+  "manualChecklist": {
+    "keyboardHistoryHash": "not-run",
+    "voiceOver": "not-run",
+    "zoom200": "not-run",
+    "contrast": "not-run",
+    "captionsTranscripts": "local transcript guidance present; manual playback not-run",
+    "pptxComparison": "not-run"
+  },
+  "status": "passed"
+}

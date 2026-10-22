@@ -1,0 +1,24 @@
+{
+  "id": "FEAT-002",
+  "type": "feat",
+  "description": "Build the manifest-driven static presentation UI with semantic 22-slide content, responsive deck styling, keyboard/history navigation, accessible diagram equivalents, media fallbacks and reproducible Playwright validation.",
+  "status": "completed",
+  "steps": [
+    "Create web/index.html with main/slide landmarks, all 22 article slides, literal text and explicit speaker-note panels; represent workflows with DOM/SVG nodes and relations, and provide alt text plus local captions/transcripts for media.",
+    "Create web/styles.css and web/app.js for the dark neon deck visual system, responsive desktop/tablet/mobile reflow, focus-visible/reduced-motion behavior, hash/history navigation, keyboard controls, focus management, panel Escape handling and media error fallbacks.",
+    "Create pinned web/package.json tooling, web/tests/smoke.mjs, web/scripts/render-reference.sh and web/README.md; run browser assertions, capture desktop/mobile/narrow screenshots, record console/network/accessibility/overflow/overlap results, and report missing PPTX reference renderer as not-run when applicable."
+  ],
+  "acceptance_criteria": [
+    "All 22 hashes load one active article with synchronized title, progress, counter, index aria-current and working previous/next controls.",
+    "At 320x568 and 200% zoom content remains reachable without body horizontal overflow or chrome overlap; diagrams retain readable DOM equivalents and keyboard focus is visible.",
+    "The smoke report shows no console errors, failed local requests or external hosts, valid manifest text/assets/models, and local video fallback/poster behavior.",
+    "Preview and validation commands are documented and run from web/ without a backend."
+  ],
+  "verification": [
+    "cd /Users/jsantana/Desktop/github/loop-and-graph-engineering-with-kiro/web && npm install && npx playwright install chromium",
+    "Run the documented local-server smoke command and inspect report.json plus desktop-XX.png, mobile-XX.png and narrow-XX.png for all slides.",
+    "Manually test keyboard/history/hash-invalid behavior, VoiceOver labels/order, 200% zoom, captions/transcripts, contrast and PPTX reference checklist."
+  ],
+  "blocked_reason": null,
+  "findings": "Implementación completada únicamente bajo web/: index.html declara los 22 artículos y landmarks; app.js consume assets/manifest.json, conserva visibleText/notesContext, genera equivalentes DOM para nodes/relations, carga imágenes/vídeos locales con poster/fallback, y gestiona hashes, pushState/replaceState inicial, popstate/hashchange, teclado, foco y extremos. styles.css implementa tokens del deck, reflow desktop/tablet/móvil, overflow encapsulado en diagramas, focus-visible y reduced-motion. README.md documenta preview/validación; package.json fija Playwright 1.52.0 como devDependency; tests/smoke.mjs genera 66 capturas y report.json; scripts/render-reference.sh registra la política de referencia PPTX. Verificación exacta ejecutada: `cd /Users/jsantana/Desktop/github/loop-and-graph-engineering-with-kiro/web && python3 scripts/extract-assets.py --source ../deck/kiro-cli-en-accion-loop-engineering.pptx` — pasó: `manifest integrity passed: 22 slides, 49 asset references`; `cd /Users/jsantana/Desktop/github/loop-and-graph-engineering-with-kiro/web && npm install && npx playwright install chromium` — pasó, Playwright 1.52.0/Chromium instalado (npm reportó 1 vulnerabilidad high de tooling, no se aplicó npm audit fix); comando local documentado ejecutado con servidor 127.0.0.1:4173 — pasó: 22 hashes, 22 títulos, modelos, assets, consola y requests no externos fallaron, overflow narrow 320x568 correcto, 66 capturas en artifacts/smoke/report.json. `sh scripts/render-reference.sh artifacts/reference` — `not-run` porque soffice/libreoffice no está disponible. Limitaciones manuales registradas en report.json: VoiceOver, checklist de teclado/history/hash inválido, zoom 200%, contraste, reproducción/captions y comparación PPTX requieren revisión manual posterior; el smoke sí cubre hash por slide, navegación/render, fallback/poster y evidencia responsive. No se modificaron deck, Loop1–Loop4 ni archivos fuera de web/. Pendiente para el caller: commit local solo de archivos bajo web/; no push.",
+}
