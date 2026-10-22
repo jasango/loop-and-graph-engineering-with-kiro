@@ -65,7 +65,10 @@ function notesMarkup(slide) { if (!slide.notesContext?.available) return ''; con
 function renderSlide(slide) {
   const article = $(`#${slide.id}`); article.className = `slide slide-${String(slide.index).padStart(2, '0')}`; article.setAttribute('aria-labelledby', `title-${slide.id.slice(-2)}`);
   const body = textBlocks(slide); const media = assetMarkup(slide); const specific = slideSpecificMarkup(slide);
-  article.innerHTML = `<div class="eyebrow">Slide ${String(slide.index).padStart(2, '0')} · Loop Engineering</div><h1 id="title-${slide.id.slice(-2)}">${escapeHtml(slide.title)}</h1><div class="content-grid"><div class="copy">${body}${specific}${modelMarkup(slide)}${notesMarkup(slide)}</div><div class="visual-column">${media}</div></div>`;
+  const heading = slide.visibleText.length ? `<h1 id="title-${slide.id.slice(-2)}">${escapeHtml(slide.title)}</h1>` : '';
+  if (!heading) article.removeAttribute('aria-labelledby');
+  article.setAttribute('aria-label', slide.visibleText.length ? slide.title : `Slide ${String(slide.index).padStart(2, '0')} visual`);
+  article.innerHTML = `${heading}<div class="content-grid"><div class="copy">${body}${specific}${modelMarkup(slide)}${notesMarkup(slide)}</div><div class="visual-column">${media}</div></div>`;
   $$('.visual', article).forEach(image => image.addEventListener('error', () => { image.classList.add('failed'); image.nextElementSibling.hidden = false; }));
   $$('video', article).forEach(video => video.addEventListener('error', () => { const fallback = video.nextElementSibling; if (fallback) fallback.hidden = false; }));
 }

@@ -2,7 +2,8 @@
   "id": "FEAT-001",
   "type": "feat",
   "description": "Extract the PPTX media and encode the faithful 22-slide content, notes, assets, checksums and accessible diagram models in a deterministic manifest under web/.",
-  "status": "completed",
+  "status": "blocked",
+  "blocked_reason": "Cross-worktree Loop4 deletion and unavailable PPTX renderer/manual visual comparison remain outside this web-only step.",
   "steps": [
     "Create web/scripts/extract-assets.py to read ../deck/kiro-cli-en-accion-loop-engineering.pptx without modifying it, extract deterministically named PNG/MP4 files, create video posters with ffmpeg, and handle EMF conversion with an explicit SVG-first/fallback policy.",
     "Generate web/assets/manifest.json from slide XML and notes, preserving literal visible text including typos, omitting an invented Harness Engineering description, representing all three slide-8 text blocks, and defining node/relationship selectors for slides 3, 4, 6, 8, 10, 12, 13, 14, 15, 16 and 17.",

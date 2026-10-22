@@ -95,8 +95,8 @@ def asset_record(path: Path, asset_type: str, required: bool = True, logical_src
 
 def model(index: int) -> dict:
     labels = MODEL_LABELS.get(index, [])
-    nodes = [{"id": f"node-{index:02d}-{n:02d}", "label": label} for n, label in enumerate(labels, 1)]
-    relations = [{"from": nodes[n - 1]["id"], "to": nodes[n]["id"], "kind": "sequence"} for n in range(1, len(nodes))]
+    nodes = [{"id": f"node-{index:02d}-{n:02d}", "label": label, "selector": f'[data-node-id="node-{index:02d}-{n:02d}"]'} for n, label in enumerate(labels, 1)]
+    relations = [{"from": nodes[n - 1]["id"], "to": nodes[n]["id"], "kind": "sequence", "selector": f'[data-relation-id="{nodes[n - 1]["id"]}-{nodes[n]["id"]}"]'} for n in range(1, len(nodes))]
     branches = []
     if index == 10:
         relations += [{"from": nodes[4]["id"], "to": nodes[5]["id"], "kind": "decision"}, {"from": nodes[5]["id"], "to": nodes[3]["id"], "kind": "loop-return"}]
@@ -113,6 +113,8 @@ def model(index: int) -> dict:
     elif index == 17:
         relations += [{"from": nodes[3]["id"], "to": nodes[0]["id"], "kind": "return"}]
         branches = [{"label": "Deploy ∥ Testing and Fixing"}]
+    for relation in relations:
+        relation["selector"] = f'[data-relation-id="{relation["from"]}-{relation["to"]}"]'
     return {"kind": "workflow" if index in {10, 13, 14, 15, 16, 17} else "content", "nodes": nodes, "relations": relations,
             "order": [node["id"] for node in nodes], "branches": branches}
 

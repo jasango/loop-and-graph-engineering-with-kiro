@@ -147,90 +147,109 @@
         "nodes": [
           {
             "id": "node-03-01",
-            "label": "Prompt Engineering"
+            "label": "Prompt Engineering",
+            "selector": "[data-node-id=\"node-03-01\"]"
           },
           {
             "id": "node-03-02",
-            "label": "Context Engineering"
+            "label": "Context Engineering",
+            "selector": "[data-node-id=\"node-03-02\"]"
           },
           {
             "id": "node-03-03",
-            "label": "Retrieval Engineering"
+            "label": "Retrieval Engineering",
+            "selector": "[data-node-id=\"node-03-03\"]"
           },
           {
             "id": "node-03-04",
-            "label": "Memory Engineering"
+            "label": "Memory Engineering",
+            "selector": "[data-node-id=\"node-03-04\"]"
           },
           {
             "id": "node-03-05",
-            "label": "Tool Engineering"
+            "label": "Tool Engineering",
+            "selector": "[data-node-id=\"node-03-05\"]"
           },
           {
             "id": "node-03-06",
-            "label": "Skill Engineering"
+            "label": "Skill Engineering",
+            "selector": "[data-node-id=\"node-03-06\"]"
           },
           {
             "id": "node-03-07",
-            "label": "Loop Engineering"
+            "label": "Loop Engineering",
+            "selector": "[data-node-id=\"node-03-07\"]"
           },
           {
             "id": "node-03-08",
-            "label": "Graph Engineering"
+            "label": "Graph Engineering",
+            "selector": "[data-node-id=\"node-03-08\"]"
           },
           {
             "id": "node-03-09",
-            "label": "Guardrail Engineering"
+            "label": "Guardrail Engineering",
+            "selector": "[data-node-id=\"node-03-09\"]"
           },
           {
             "id": "node-03-10",
-            "label": "Harness Engineering"
+            "label": "Harness Engineering",
+            "selector": "[data-node-id=\"node-03-10\"]"
           }
         ],
         "relations": [
           {
             "from": "node-03-01",
             "to": "node-03-02",
-            "kind": "sequence"
+            "kind": "sequence",
+            "selector": "[data-relation-id=\"node-03-01-node-03-02\"]"
           },
           {
             "from": "node-03-02",
             "to": "node-03-03",
-            "kind": "sequence"
+            "kind": "sequence",
+            "selector": "[data-relation-id=\"node-03-02-node-03-03\"]"
           },
           {
             "from": "node-03-03",
             "to": "node-03-04",
-            "kind": "sequence"
+            "kind": "sequence",
+            "selector": "[data-relation-id=\"node-03-03-node-03-04\"]"
           },
           {
             "from": "node-03-04",
             "to": "node-03-05",
-            "kind": "sequence"
+            "kind": "sequence",
+            "selector": "[data-relation-id=\"node-03-04-node-03-05\"]"
           },
           {
             "from": "node-03-05",
             "to": "node-03-06",
-            "kind": "sequence"
+            "kind": "sequence",
+            "selector": "[data-relation-id=\"node-03-05-node-03-06\"]"
           },
           {
             "from": "node-03-06",
             "to": "node-03-07",
-            "kind": "sequence"
+            "kind": "sequence",
+            "selector": "[data-relation-id=\"node-03-06-node-03-07\"]"
           },
           {
             "from": "node-03-07",
             "to": "node-03-08",
-            "kind": "sequence"
+            "kind": "sequence",
+            "selector": "[data-relation-id=\"node-03-07-node-03-08\"]"
           },
           {
             "from": "node-03-08",
             "to": "node-03-09",
-            "kind": "sequence"
+            "kind": "sequence",
+            "selector": "[data-relation-id=\"node-03-08-node-03-09\"]"
           },
           {
             "from": "node-03-09",
             "to": "node-03-10",
-            "kind": "sequence"
+            "kind": "sequence",
+            "selector": "[data-relation-id=\"node-03-09-node-03-10\"]"
           }
         ],
         "order": [
@@ -301,90 +320,109 @@
         "nodes": [
           {
             "id": "node-04-01",
-            "label": "Prompt Engineering"
+            "label": "Prompt Engineering",
+            "selector": "[data-node-id=\"node-04-01\"]"
           },
           {
             "id": "node-04-02",
-            "label": "Context Engineering"
+            "label": "Context Engineering",
+            "selector": "[data-node-id=\"node-04-02\"]"
           },
           {
             "id": "node-04-03",
-            "label": "Retrieval Engineering"
+            "label": "Retrieval Engineering",
+            "selector": "[data-node-id=\"node-04-03\"]"
           },
           {
             "id": "node-04-04",
-            "label": "Memory Engineering"
+            "label": "Memory Engineering",
+            "selector": "[data-node-id=\"node-04-04\"]"
           },
           {
             "id": "node-04-05",
-            "label": "Tool Engineering"
+            "label": "Tool Engineering",
+            "selector": "[data-node-id=\"node-04-05\"]"
           },
           {
             "id": "node-04-06",
-            "label": "Skill Engineering"
+            "label": "Skill Engineering",
+            "selector": "[data-node-id=\"node-04-06\"]"
           },
           {
             "id": "node-04-07",
-            "label": "Loop Engineering"
+            "label": "Loop Engineering",
+            "selector": "[data-node-id=\"node-04-07\"]"
           },
           {
             "id": "node-04-08",
-            "label": "Graph Engineering"
+            "label": "Graph Engineering",
+            "selector": "[data-node-id=\"node-04-08\"]"
           },
           {
             "id": "node-04-09",
-            "label": "Guardrail Engineering"
+            "label": "Guardrail Engineering",
+            "selector": "[data-node-id=\"node-04-09\"]"
           },
           {
             "id": "node-04-10",
-            "label": "Harness Engineering"
+            "label": "Harness Engineering",
+            "selector": "[data-node-id=\"node-04-10\"]"
           }
         ],
         "relations": [
           {
             "from": "node-04-01",
             "to": "node-04-02",
-            "kind": "sequence"
+            "kind": "sequence",
+            "selector": "[data-relation-id=\"node-04-01-node-04-02\"]"
           },
           {
             "from": "node-04-02",
             "to": "node-04-03",
-            "kind": "sequence"
+            "kind": "sequence",
+            "selector": "[data-relation-id=\"node-04-02-node-04-03\"]"
           },
           {
             "from": "node-04-03",
             "to": "node-04-04",
-            "kind": "sequence"
+            "kind": "sequence",
+            "selector": "[data-relation-id=\"node-04-03-node-04-04\"]"
           },
           {
             "from": "node-04-04",
             "to": "node-04-05",
-            "kind": "sequence"
+            "kind": "sequence",
+            "selector": "[data-relation-id=\"node-04-04-node-04-05\"]"
           },
           {
             "from": "node-04-05",
             "to": "node-04-06",
-            "kind": "sequence"
+            "kind": "sequence",
+            "selector": "[data-relation-id=\"node-04-05-node-04-06\"]"
           },
           {
             "from": "node-04-06",
             "to": "node-04-07",
-            "kind": "sequence"
+            "kind": "sequence",
+            "selector": "[data-relation-id=\"node-04-06-node-04-07\"]"
           },
           {
             "from": "node-04-07",
             "to": "node-04-08",
-            "kind": "sequence"
+            "kind": "sequence",
+            "selector": "[data-relation-id=\"node-04-07-node-04-08\"]"
           },
           {
             "from": "node-04-08",
             "to": "node-04-09",
-            "kind": "sequence"
+            "kind": "sequence",
+            "selector": "[data-relation-id=\"node-04-08-node-04-09\"]"
           },
           {
             "from": "node-04-09",
             "to": "node-04-10",
-            "kind": "sequence"
+            "kind": "sequence",
+            "selector": "[data-relation-id=\"node-04-09-node-04-10\"]"
           }
         ],
         "order": [
@@ -495,90 +533,109 @@
         "nodes": [
           {
             "id": "node-06-01",
-            "label": "Objetivo verificable"
+            "label": "Objetivo verificable",
+            "selector": "[data-node-id=\"node-06-01\"]"
           },
           {
             "id": "node-06-02",
-            "label": "Observación del entorno"
+            "label": "Observación del entorno",
+            "selector": "[data-node-id=\"node-06-02\"]"
           },
           {
             "id": "node-06-03",
-            "label": "Ejecución adaptativa"
+            "label": "Ejecución adaptativa",
+            "selector": "[data-node-id=\"node-06-03\"]"
           },
           {
             "id": "node-06-04",
-            "label": "Verificación de resultados"
+            "label": "Verificación de resultados",
+            "selector": "[data-node-id=\"node-06-04\"]"
           },
           {
             "id": "node-06-05",
-            "label": "Medición del progreso"
+            "label": "Medición del progreso",
+            "selector": "[data-node-id=\"node-06-05\"]"
           },
           {
             "id": "node-06-06",
-            "label": "Recuperación de errores"
+            "label": "Recuperación de errores",
+            "selector": "[data-node-id=\"node-06-06\"]"
           },
           {
             "id": "node-06-07",
-            "label": "Gestión del estado"
+            "label": "Gestión del estado",
+            "selector": "[data-node-id=\"node-06-07\"]"
           },
           {
             "id": "node-06-08",
-            "label": "Terminación controlada"
+            "label": "Terminación controlada",
+            "selector": "[data-node-id=\"node-06-08\"]"
           },
           {
             "id": "node-06-09",
-            "label": "Control de recursos y seguridad"
+            "label": "Control de recursos y seguridad",
+            "selector": "[data-node-id=\"node-06-09\"]"
           },
           {
             "id": "node-06-10",
-            "label": "Observabilidad y trazabilidad"
+            "label": "Observabilidad y trazabilidad",
+            "selector": "[data-node-id=\"node-06-10\"]"
           }
         ],
         "relations": [
           {
             "from": "node-06-01",
             "to": "node-06-02",
-            "kind": "sequence"
+            "kind": "sequence",
+            "selector": "[data-relation-id=\"node-06-01-node-06-02\"]"
           },
           {
             "from": "node-06-02",
             "to": "node-06-03",
-            "kind": "sequence"
+            "kind": "sequence",
+            "selector": "[data-relation-id=\"node-06-02-node-06-03\"]"
           },
           {
             "from": "node-06-03",
             "to": "node-06-04",
-            "kind": "sequence"
+            "kind": "sequence",
+            "selector": "[data-relation-id=\"node-06-03-node-06-04\"]"
           },
           {
             "from": "node-06-04",
             "to": "node-06-05",
-            "kind": "sequence"
+            "kind": "sequence",
+            "selector": "[data-relation-id=\"node-06-04-node-06-05\"]"
           },
           {
             "from": "node-06-05",
             "to": "node-06-06",
-            "kind": "sequence"
+            "kind": "sequence",
+            "selector": "[data-relation-id=\"node-06-05-node-06-06\"]"
           },
           {
             "from": "node-06-06",
             "to": "node-06-07",
-            "kind": "sequence"
+            "kind": "sequence",
+            "selector": "[data-relation-id=\"node-06-06-node-06-07\"]"
           },
           {
             "from": "node-06-07",
             "to": "node-06-08",
-            "kind": "sequence"
+            "kind": "sequence",
+            "selector": "[data-relation-id=\"node-06-07-node-06-08\"]"
           },
           {
             "from": "node-06-08",
             "to": "node-06-09",
-            "kind": "sequence"
+            "kind": "sequence",
+            "selector": "[data-relation-id=\"node-06-08-node-06-09\"]"
           },
           {
             "from": "node-06-09",
             "to": "node-06-10",
-            "kind": "sequence"
+            "kind": "sequence",
+            "selector": "[data-relation-id=\"node-06-09-node-06-10\"]"
           }
         ],
         "order": [
@@ -650,36 +707,43 @@
         "nodes": [
           {
             "id": "node-08-01",
-            "label": "Loop Programático usando Kiro CLI"
+            "label": "Loop Programático usando Kiro CLI",
+            "selector": "[data-node-id=\"node-08-01\"]"
           },
           {
             "id": "node-08-02",
-            "label": "Una opción es usar kiro-cli dentro de scripts y controlar el flujo aprovechando las primitivas del sistema operativo."
+            "label": "Una opción es usar kiro-cli dentro de scripts y controlar el flujo aprovechando las primitivas del sistema operativo.",
+            "selector": "[data-node-id=\"node-08-02\"]"
           },
           {
             "id": "node-08-03",
-            "label": "El paramento –no-interactive ejecuta Kiro CLI sin preguntas ni interfaz interactiva."
+            "label": "El paramento –no-interactive ejecuta Kiro CLI sin preguntas ni interfaz interactiva.",
+            "selector": "[data-node-id=\"node-08-03\"]"
           },
           {
             "id": "node-08-04",
-            "label": "El parámetro –trust-tools autoriza únicamente las herramientas especificadas durante esa ejecución."
+            "label": "El parámetro –trust-tools autoriza únicamente las herramientas especificadas durante esa ejecución.",
+            "selector": "[data-node-id=\"node-08-04\"]"
           }
         ],
         "relations": [
           {
             "from": "node-08-01",
             "to": "node-08-02",
-            "kind": "sequence"
+            "kind": "sequence",
+            "selector": "[data-relation-id=\"node-08-01-node-08-02\"]"
           },
           {
             "from": "node-08-02",
             "to": "node-08-03",
-            "kind": "sequence"
+            "kind": "sequence",
+            "selector": "[data-relation-id=\"node-08-02-node-08-03\"]"
           },
           {
             "from": "node-08-03",
             "to": "node-08-04",
-            "kind": "sequence"
+            "kind": "sequence",
+            "selector": "[data-relation-id=\"node-08-03-node-08-04\"]"
           }
         ],
         "order": [
@@ -856,73 +920,88 @@
         "nodes": [
           {
             "id": "node-10-01",
-            "label": "Loop Programático usando Agentes Kiro CLI"
+            "label": "Loop Programático usando Agentes Kiro CLI",
+            "selector": "[data-node-id=\"node-10-01\"]"
           },
           {
             "id": "node-10-02",
-            "label": "Inicio"
+            "label": "Inicio",
+            "selector": "[data-node-id=\"node-10-02\"]"
           },
           {
             "id": "node-10-03",
-            "label": "Definir objetivo"
+            "label": "Definir objetivo",
+            "selector": "[data-node-id=\"node-10-03\"]"
           },
           {
             "id": "node-10-04",
-            "label": "Ejecutar agente"
+            "label": "Ejecutar agente",
+            "selector": "[data-node-id=\"node-10-04\"]"
           },
           {
             "id": "node-10-05",
-            "label": "Verificar resultado"
+            "label": "Verificar resultado",
+            "selector": "[data-node-id=\"node-10-05\"]"
           },
           {
             "id": "node-10-06",
-            "label": "Corregir o continuar"
+            "label": "Corregir o continuar",
+            "selector": "[data-node-id=\"node-10-06\"]"
           },
           {
             "id": "node-10-07",
-            "label": "Finalizar"
+            "label": "Finalizar",
+            "selector": "[data-node-id=\"node-10-07\"]"
           }
         ],
         "relations": [
           {
             "from": "node-10-01",
             "to": "node-10-02",
-            "kind": "sequence"
+            "kind": "sequence",
+            "selector": "[data-relation-id=\"node-10-01-node-10-02\"]"
           },
           {
             "from": "node-10-02",
             "to": "node-10-03",
-            "kind": "sequence"
+            "kind": "sequence",
+            "selector": "[data-relation-id=\"node-10-02-node-10-03\"]"
           },
           {
             "from": "node-10-03",
             "to": "node-10-04",
-            "kind": "sequence"
+            "kind": "sequence",
+            "selector": "[data-relation-id=\"node-10-03-node-10-04\"]"
           },
           {
             "from": "node-10-04",
             "to": "node-10-05",
-            "kind": "sequence"
+            "kind": "sequence",
+            "selector": "[data-relation-id=\"node-10-04-node-10-05\"]"
           },
           {
             "from": "node-10-05",
             "to": "node-10-06",
-            "kind": "sequence"
+            "kind": "sequence",
+            "selector": "[data-relation-id=\"node-10-05-node-10-06\"]"
           },
           {
             "from": "node-10-06",
             "to": "node-10-07",
-            "kind": "sequence"
+            "kind": "sequence",
+            "selector": "[data-relation-id=\"node-10-06-node-10-07\"]"
           },
           {
             "from": "node-10-05",
             "to": "node-10-06",
-            "kind": "decision"
+            "kind": "decision",
+            "selector": "[data-relation-id=\"node-10-05-node-10-06\"]"
           },
           {
             "from": "node-10-06",
             "to": "node-10-04",
-            "kind": "loop-return"
+            "kind": "loop-return",
+            "selector": "[data-relation-id=\"node-10-06-node-10-04\"]"
           }
         ],
         "order": [
@@ -1038,90 +1117,109 @@
         "nodes": [
           {
             "id": "node-12-01",
-            "label": "Automatización SDLC usando Kiro Workflows"
+            "label": "Automatización SDLC usando Kiro Workflows",
+            "selector": "[data-node-id=\"node-12-01\"]"
           },
           {
             "id": "node-12-02",
-            "label": "Definición de Workflows"
+            "label": "Definición de Workflows",
+            "selector": "[data-node-id=\"node-12-02\"]"
           },
           {
             "id": "node-12-03",
-            "label": "Nodos de agente"
+            "label": "Nodos de agente",
+            "selector": "[data-node-id=\"node-12-03\"]"
           },
           {
             "id": "node-12-04",
-            "label": "Secuencias"
+            "label": "Secuencias",
+            "selector": "[data-node-id=\"node-12-04\"]"
           },
           {
             "id": "node-12-05",
-            "label": "Loops"
+            "label": "Loops",
+            "selector": "[data-node-id=\"node-12-05\"]"
           },
           {
             "id": "node-12-06",
-            "label": "Ramas paralelas"
+            "label": "Ramas paralelas",
+            "selector": "[data-node-id=\"node-12-06\"]"
           },
           {
             "id": "node-12-07",
-            "label": "IDE"
+            "label": "IDE",
+            "selector": "[data-node-id=\"node-12-07\"]"
           },
           {
             "id": "node-12-08",
-            "label": "CLI"
+            "label": "CLI",
+            "selector": "[data-node-id=\"node-12-08\"]"
           },
           {
             "id": "node-12-09",
-            "label": "WEB"
+            "label": "WEB",
+            "selector": "[data-node-id=\"node-12-09\"]"
           },
           {
             "id": "node-12-10",
-            "label": ".kiro/workflows"
+            "label": ".kiro/workflows",
+            "selector": "[data-node-id=\"node-12-10\"]"
           }
         ],
         "relations": [
           {
             "from": "node-12-01",
             "to": "node-12-02",
-            "kind": "sequence"
+            "kind": "sequence",
+            "selector": "[data-relation-id=\"node-12-01-node-12-02\"]"
           },
           {
             "from": "node-12-02",
             "to": "node-12-03",
-            "kind": "sequence"
+            "kind": "sequence",
+            "selector": "[data-relation-id=\"node-12-02-node-12-03\"]"
           },
           {
             "from": "node-12-03",
             "to": "node-12-04",
-            "kind": "sequence"
+            "kind": "sequence",
+            "selector": "[data-relation-id=\"node-12-03-node-12-04\"]"
           },
           {
             "from": "node-12-04",
             "to": "node-12-05",
-            "kind": "sequence"
+            "kind": "sequence",
+            "selector": "[data-relation-id=\"node-12-04-node-12-05\"]"
           },
           {
             "from": "node-12-05",
             "to": "node-12-06",
-            "kind": "sequence"
+            "kind": "sequence",
+            "selector": "[data-relation-id=\"node-12-05-node-12-06\"]"
           },
           {
             "from": "node-12-06",
             "to": "node-12-07",
-            "kind": "sequence"
+            "kind": "sequence",
+            "selector": "[data-relation-id=\"node-12-06-node-12-07\"]"
           },
           {
             "from": "node-12-07",
             "to": "node-12-08",
-            "kind": "sequence"
+            "kind": "sequence",
+            "selector": "[data-relation-id=\"node-12-07-node-12-08\"]"
           },
           {
             "from": "node-12-08",
             "to": "node-12-09",
-            "kind": "sequence"
+            "kind": "sequence",
+            "selector": "[data-relation-id=\"node-12-08-node-12-09\"]"
           },
           {
             "from": "node-12-09",
             "to": "node-12-10",
-            "kind": "sequence"
+            "kind": "sequence",
+            "selector": "[data-relation-id=\"node-12-09-node-12-10\"]"
           }
         ],
         "order": [
@@ -1168,90 +1266,109 @@
         "nodes": [
           {
             "id": "node-13-01",
-            "label": "Automatización SDLC usando Kiro Workflows"
+            "label": "Automatización SDLC usando Kiro Workflows",
+            "selector": "[data-node-id=\"node-13-01\"]"
           },
           {
             "id": "node-13-02",
-            "label": "Specs Creation"
+            "label": "Specs Creation",
+            "selector": "[data-node-id=\"node-13-02\"]"
           },
           {
             "id": "node-13-03",
-            "label": "software-spec.workflow"
+            "label": "software-spec.workflow",
+            "selector": "[data-node-id=\"node-13-03\"]"
           },
           {
             "id": "node-13-04",
-            "label": "Code Generation"
+            "label": "Code Generation",
+            "selector": "[data-node-id=\"node-13-04\"]"
           },
           {
             "id": "node-13-05",
-            "label": "software-build.workflow"
+            "label": "software-build.workflow",
+            "selector": "[data-node-id=\"node-13-05\"]"
           },
           {
             "id": "node-13-06",
-            "label": "Refinement"
+            "label": "Refinement",
+            "selector": "[data-node-id=\"node-13-06\"]"
           },
           {
             "id": "node-13-07",
-            "label": "Testing and Fixing"
+            "label": "Testing and Fixing",
+            "selector": "[data-node-id=\"node-13-07\"]"
           },
           {
             "id": "node-13-08",
-            "label": "Code"
+            "label": "Code",
+            "selector": "[data-node-id=\"node-13-08\"]"
           },
           {
             "id": "node-13-09",
-            "label": "Deploy"
+            "label": "Deploy",
+            "selector": "[data-node-id=\"node-13-09\"]"
           },
           {
             "id": "node-13-10",
-            "label": "software-deploy.workflow"
+            "label": "software-deploy.workflow",
+            "selector": "[data-node-id=\"node-13-10\"]"
           }
         ],
         "relations": [
           {
             "from": "node-13-01",
             "to": "node-13-02",
-            "kind": "sequence"
+            "kind": "sequence",
+            "selector": "[data-relation-id=\"node-13-01-node-13-02\"]"
           },
           {
             "from": "node-13-02",
             "to": "node-13-03",
-            "kind": "recipe"
+            "kind": "recipe",
+            "selector": "[data-relation-id=\"node-13-02-node-13-03\"]"
           },
           {
             "from": "node-13-01",
             "to": "node-13-04",
-            "kind": "branch"
+            "kind": "branch",
+            "selector": "[data-relation-id=\"node-13-01-node-13-04\"]"
           },
           {
             "from": "node-13-04",
             "to": "node-13-05",
-            "kind": "recipe"
+            "kind": "recipe",
+            "selector": "[data-relation-id=\"node-13-04-node-13-05\"]"
           },
           {
             "from": "node-13-05",
             "to": "node-13-06",
-            "kind": "sequence"
+            "kind": "sequence",
+            "selector": "[data-relation-id=\"node-13-05-node-13-06\"]"
           },
           {
             "from": "node-13-06",
             "to": "node-13-07",
-            "kind": "branch"
+            "kind": "branch",
+            "selector": "[data-relation-id=\"node-13-06-node-13-07\"]"
           },
           {
             "from": "node-13-07",
             "to": "node-13-08",
-            "kind": "sequence"
+            "kind": "sequence",
+            "selector": "[data-relation-id=\"node-13-07-node-13-08\"]"
           },
           {
             "from": "node-13-08",
             "to": "node-13-09",
-            "kind": "sequence"
+            "kind": "sequence",
+            "selector": "[data-relation-id=\"node-13-08-node-13-09\"]"
           },
           {
             "from": "node-13-09",
             "to": "node-13-10",
-            "kind": "recipe"
+            "kind": "recipe",
+            "selector": "[data-relation-id=\"node-13-09-node-13-10\"]"
           }
         ],
         "order": [
@@ -1344,36 +1461,43 @@
         "nodes": [
           {
             "id": "node-14-01",
-            "label": "Automatización SDLC usando Kiro Workflows"
+            "label": "Automatización SDLC usando Kiro Workflows",
+            "selector": "[data-node-id=\"node-14-01\"]"
           },
           {
             "id": "node-14-02",
-            "label": "Specs Creation"
+            "label": "Specs Creation",
+            "selector": "[data-node-id=\"node-14-02\"]"
           },
           {
             "id": "node-14-03",
-            "label": "software-spec.workflow"
+            "label": "software-spec.workflow",
+            "selector": "[data-node-id=\"node-14-03\"]"
           },
           {
             "id": "node-14-04",
-            "label": "Refinement"
+            "label": "Refinement",
+            "selector": "[data-node-id=\"node-14-04\"]"
           }
         ],
         "relations": [
           {
             "from": "node-14-01",
             "to": "node-14-02",
-            "kind": "sequence"
+            "kind": "sequence",
+            "selector": "[data-relation-id=\"node-14-01-node-14-02\"]"
           },
           {
             "from": "node-14-02",
             "to": "node-14-03",
-            "kind": "sequence"
+            "kind": "sequence",
+            "selector": "[data-relation-id=\"node-14-02-node-14-03\"]"
           },
           {
             "from": "node-14-03",
             "to": "node-14-04",
-            "kind": "sequence"
+            "kind": "sequence",
+            "selector": "[data-relation-id=\"node-14-03-node-14-04\"]"
           }
         ],
         "order": [
@@ -1436,96 +1560,116 @@
         "nodes": [
           {
             "id": "node-15-01",
-            "label": "Automatización SDLC usando Kiro Workflows"
+            "label": "Automatización SDLC usando Kiro Workflows",
+            "selector": "[data-node-id=\"node-15-01\"]"
           },
           {
             "id": "node-15-02",
-            "label": "Specs Creation"
+            "label": "Specs Creation",
+            "selector": "[data-node-id=\"node-15-02\"]"
           },
           {
             "id": "node-15-03",
-            "label": "software-spec.workflow"
+            "label": "software-spec.workflow",
+            "selector": "[data-node-id=\"node-15-03\"]"
           },
           {
             "id": "node-15-04",
-            "label": "Refinement"
+            "label": "Refinement",
+            "selector": "[data-node-id=\"node-15-04\"]"
           },
           {
             "id": "node-15-05",
-            "label": "Se crea la carpeta del nuevo proyecto"
+            "label": "Se crea la carpeta del nuevo proyecto",
+            "selector": "[data-node-id=\"node-15-05\"]"
           },
           {
             "id": "node-15-06",
-            "label": "Se define el workflow, agente, esfuerzo y prompt inicial"
+            "label": "Se define el workflow, agente, esfuerzo y prompt inicial",
+            "selector": "[data-node-id=\"node-15-06\"]"
           },
           {
             "id": "node-15-07",
-            "label": "Se define un bucle se revisión y aprobación con iteraciones máximas"
+            "label": "Se define un bucle se revisión y aprobación con iteraciones máximas",
+            "selector": "[data-node-id=\"node-15-07\"]"
           },
           {
             "id": "node-15-08",
-            "label": "El Analyst crea la spec y hace preguntas al usuario y búsquedas web para llenar vacíos existentes en la spec"
+            "label": "El Analyst crea la spec y hace preguntas al usuario y búsquedas web para llenar vacíos existentes en la spec",
+            "selector": "[data-node-id=\"node-15-08\"]"
           },
           {
             "id": "node-15-09",
-            "label": "El Reviewer revisa la spec y emite un jucio si la misma está lista para implementarse emitiendo una opinión"
+            "label": "El Reviewer revisa la spec y emite un jucio si la misma está lista para implementarse emitiendo una opinión",
+            "selector": "[data-node-id=\"node-15-09\"]"
           }
         ],
         "relations": [
           {
             "from": "node-15-01",
             "to": "node-15-02",
-            "kind": "sequence"
+            "kind": "sequence",
+            "selector": "[data-relation-id=\"node-15-01-node-15-02\"]"
           },
           {
             "from": "node-15-02",
             "to": "node-15-03",
-            "kind": "sequence"
+            "kind": "sequence",
+            "selector": "[data-relation-id=\"node-15-02-node-15-03\"]"
           },
           {
             "from": "node-15-03",
             "to": "node-15-04",
-            "kind": "sequence"
+            "kind": "sequence",
+            "selector": "[data-relation-id=\"node-15-03-node-15-04\"]"
           },
           {
             "from": "node-15-04",
             "to": "node-15-05",
-            "kind": "sequence"
+            "kind": "sequence",
+            "selector": "[data-relation-id=\"node-15-04-node-15-05\"]"
           },
           {
             "from": "node-15-05",
             "to": "node-15-06",
-            "kind": "sequence"
+            "kind": "sequence",
+            "selector": "[data-relation-id=\"node-15-05-node-15-06\"]"
           },
           {
             "from": "node-15-06",
             "to": "node-15-07",
-            "kind": "sequence"
+            "kind": "sequence",
+            "selector": "[data-relation-id=\"node-15-06-node-15-07\"]"
           },
           {
             "from": "node-15-07",
             "to": "node-15-08",
-            "kind": "sequence"
+            "kind": "sequence",
+            "selector": "[data-relation-id=\"node-15-07-node-15-08\"]"
           },
           {
             "from": "node-15-08",
             "to": "node-15-09",
-            "kind": "sequence"
+            "kind": "sequence",
+            "selector": "[data-relation-id=\"node-15-08-node-15-09\"]"
           },
           {
             "from": "node-15-05",
             "to": "node-15-06",
-            "kind": "sequence"
+            "kind": "sequence",
+            "selector": "[data-relation-id=\"node-15-05-node-15-06\"]"
           },
           {
             "from": "node-15-07",
             "to": "node-15-05",
-            "kind": "review-loop"
+            "kind": "review-loop",
+            "selector": "[data-relation-id=\"node-15-07-node-15-05\"]"
           },
           {
             "from": "node-15-09",
             "to": "node-15-07",
-            "kind": "review-loop"
+            "kind": "review-loop",
+            "selector": "[data-relation-id=\"node-15-09-node-15-07\"]"
           }
         ],
         "order": [
@@ -1592,41 +1736,49 @@
         "nodes": [
           {
             "id": "node-16-01",
-            "label": "Automatización SDLC usando Kiro Workflows"
+            "label": "Automatización SDLC usando Kiro Workflows",
+            "selector": "[data-node-id=\"node-16-01\"]"
           },
           {
             "id": "node-16-02",
-            "label": "Code Generation"
+            "label": "Code Generation",
+            "selector": "[data-node-id=\"node-16-02\"]"
           },
           {
             "id": "node-16-03",
-            "label": "software-build.workflow"
+            "label": "software-build.workflow",
+            "selector": "[data-node-id=\"node-16-03\"]"
           },
           {
             "id": "node-16-04",
-            "label": "Testing and Fixing"
+            "label": "Testing and Fixing",
+            "selector": "[data-node-id=\"node-16-04\"]"
           }
         ],
         "relations": [
           {
             "from": "node-16-01",
             "to": "node-16-02",
-            "kind": "sequence"
+            "kind": "sequence",
+            "selector": "[data-relation-id=\"node-16-01-node-16-02\"]"
           },
           {
             "from": "node-16-02",
             "to": "node-16-03",
-            "kind": "sequence"
+            "kind": "sequence",
+            "selector": "[data-relation-id=\"node-16-02-node-16-03\"]"
           },
           {
             "from": "node-16-03",
             "to": "node-16-04",
-            "kind": "sequence"
+            "kind": "sequence",
+            "selector": "[data-relation-id=\"node-16-03-node-16-04\"]"
           },
           {
             "from": "node-16-04",
             "to": "node-16-02",
-            "kind": "test-loop"
+            "kind": "test-loop",
+            "selector": "[data-relation-id=\"node-16-04-node-16-02\"]"
           }
         ],
         "order": [
@@ -1688,50 +1840,60 @@
         "nodes": [
           {
             "id": "node-17-01",
-            "label": "Automatización SDLC usando Kiro Workflows"
+            "label": "Automatización SDLC usando Kiro Workflows",
+            "selector": "[data-node-id=\"node-17-01\"]"
           },
           {
             "id": "node-17-02",
-            "label": "Code"
+            "label": "Code",
+            "selector": "[data-node-id=\"node-17-02\"]"
           },
           {
             "id": "node-17-03",
-            "label": "Deploy"
+            "label": "Deploy",
+            "selector": "[data-node-id=\"node-17-03\"]"
           },
           {
             "id": "node-17-04",
-            "label": "software-deploy.workflow"
+            "label": "software-deploy.workflow",
+            "selector": "[data-node-id=\"node-17-04\"]"
           },
           {
             "id": "node-17-05",
-            "label": "Testing and Fixing"
+            "label": "Testing and Fixing",
+            "selector": "[data-node-id=\"node-17-05\"]"
           }
         ],
         "relations": [
           {
             "from": "node-17-01",
             "to": "node-17-02",
-            "kind": "sequence"
+            "kind": "sequence",
+            "selector": "[data-relation-id=\"node-17-01-node-17-02\"]"
           },
           {
             "from": "node-17-02",
             "to": "node-17-03",
-            "kind": "sequence"
+            "kind": "sequence",
+            "selector": "[data-relation-id=\"node-17-02-node-17-03\"]"
           },
           {
             "from": "node-17-03",
             "to": "node-17-04",
-            "kind": "sequence"
+            "kind": "sequence",
+            "selector": "[data-relation-id=\"node-17-03-node-17-04\"]"
           },
           {
             "from": "node-17-04",
             "to": "node-17-05",
-            "kind": "sequence"
+            "kind": "sequence",
+            "selector": "[data-relation-id=\"node-17-04-node-17-05\"]"
           },
           {
             "from": "node-17-04",
             "to": "node-17-01",
-            "kind": "return"
+            "kind": "return",
+            "selector": "[data-relation-id=\"node-17-04-node-17-01\"]"
           }
         ],
         "order": [

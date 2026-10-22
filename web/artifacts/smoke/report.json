@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-22T19:49:51.963Z",
+  "generatedAt": "2026-10-22T19:54:05.842Z",
   "base": "http://127.0.0.1:4173",
   "slideCount": 22,
   "checks": [
@@ -11,7 +11,12 @@
       "zoom": 1,
       "consoleErrors": [],
       "requestFailures": [],
-      "externalRequests": []
+      "externalRequests": [],
+      "overlapFailures": 0,
+      "keyboard": {
+        "active": "slide-02",
+        "focused": "slide-02"
+      }
     },
     {
       "viewport": {
@@ -21,7 +26,12 @@
       "zoom": 1,
       "consoleErrors": [],
       "requestFailures": [],
-      "externalRequests": []
+      "externalRequests": [],
+      "overlapFailures": 0,
+      "keyboard": {
+        "active": "slide-02",
+        "focused": "slide-02"
+      }
     },
     {
       "viewport": {
@@ -31,7 +41,12 @@
       "zoom": 1,
       "consoleErrors": [],
       "requestFailures": [],
-      "externalRequests": []
+      "externalRequests": [],
+      "overlapFailures": 0,
+      "keyboard": {
+        "active": "slide-02",
+        "focused": "slide-02"
+      }
     },
     {
       "viewport": {
@@ -41,20 +56,25 @@
       "zoom": 2,
       "consoleErrors": [],
       "requestFailures": [],
-      "externalRequests": []
+      "externalRequests": [],
+      "overlapFailures": 0,
+      "keyboard": {
+        "active": "slide-02",
+        "focused": "slide-02"
+      }
     }
   ],
   "failures": [],
   "referenceRendering": "not-run: soffice/libreoffice unavailable; render-reference.sh is executable when installed",
   "automatedChecklist": {
     "manifestIntegrity": true,
-    "keyboardHistoryHash": "verified by implementation; focus assertions pending manual VoiceOver",
+    "keyboardHistoryHash": true,
     "zoom200": true,
-    "responsiveOverlap": false,
-    "captionsTranscripts": false
+    "responsiveOverlap": true,
+    "captionsTranscripts": true
   },
   "manualChecklist": {
-    "keyboardHistoryHash": "not-run",
+    "keyboardHistoryHash": "automated focus/navigation assertions passed",
     "voiceOver": "not-run",
     "contrast": "not-run",
     "pptxComparison": "not-run"
