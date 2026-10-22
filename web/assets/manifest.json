@@ -1,0 +1,1939 @@
+{
+  "source": {
+    "file": "deck/kiro-cli-en-accion-loop-engineering.pptx",
+    "widthEmu": 12192000,
+    "heightEmu": 6858000
+  },
+  "conversionPolicy": "image23.emf converted via embedded PDF raster fallback (Inkscape unavailable; ImageMagick delegate unavailable)",
+  "slides": [
+    {
+      "id": "slide-01",
+      "index": 1,
+      "title": "Slide 1",
+      "visibleText": [],
+      "notesContext": {
+        "available": true,
+        "label": "Notas del presentador / contexto adicional",
+        "text": [
+          "Hola, mi nombre es Javier Santana y vengo a hablar sobre como podemos automatizar cada vez más y mejor el proceso de desarrollo de software usando Kiro.",
+          "Como saben cuando Kiro fue lanzado hace una año y medio proponía 2 formas de trabajar, una basada en Vibe Coding y otra basada en Specs.  Desde entonces Kiro ha lanzado decenas de nuevas características y ahora proporciona diferentes formas de uso como Kiro CLI, Kiro Web, Kiro Mobile que se agregan al Kiro IDE.",
+          "Kiro IDE, CLI, Web y Mobile, son todas formas diferentes de acceder al mismo harness. IDE y CLI principalmente para controlar el proceso desde la máquina del desarrollador,  CLI para automatizar CI/CD,  Web para trabajar en la nube y Mobile para útil para supervisar y tomar decisiones cómodamente desde el móvil.",
+          "Kiro Crew por su parte es un entorno basado en Kiro donde se puede coordinar la ejecución de los múltiples agentes inspirado en los que es OpenClaw.  En Kiro Crew:",
+          "-  Se pueden lanzar agentes de forma planificada o con base a eventos.",
+          "-  Pueden accederse a través de múltiples canales como Slack, Whatsapps o Telegram.",
+          "- Los agentes tienen memoria persistente y pueden mejorar a sí mismos."
+        ]
+      },
+      "assets": [
+        {
+          "src": "assets/images/image-02.png",
+          "type": "image",
+          "required": true,
+          "sha256": "f5447014be76d8199c8be208b9b16496109a856fd1e14f6eac0461c289d76835",
+          "bytes": 1043377,
+          "dimensions": {
+            "width": 1920,
+            "height": 1080
+          }
+        }
+      ],
+      "accessibleModel": {
+        "kind": "content",
+        "nodes": [],
+        "relations": [],
+        "order": [],
+        "branches": []
+      }
+    },
+    {
+      "id": "slide-02",
+      "index": 2,
+      "title": "Javier Santana",
+      "visibleText": [
+        "Javier Santana",
+        "AI-Augmented Software Developer",
+        "Kiro CLI en Acción:Automatizando el SDLC con Loop Engineering"
+      ],
+      "notesContext": null,
+      "assets": [
+        {
+          "src": "assets/images/image-03.png",
+          "type": "image",
+          "required": true,
+          "sha256": "ef52452165350da93f3602ff83212301052df6ded9e191202c34e031780d2527",
+          "bytes": 2944062,
+          "dimensions": {
+            "width": 1448,
+            "height": 1086
+          }
+        },
+        {
+          "src": "assets/images/image-04.png",
+          "type": "image",
+          "required": true,
+          "sha256": "0f01b30abf2acbba70b7040bbed9eeb6fb295e4b27015c866f1b43ed0565aeb4",
+          "bytes": 16524,
+          "dimensions": {
+            "width": 1317,
+            "height": 1547
+          }
+        },
+        {
+          "src": "assets/images/image-01.png",
+          "type": "image",
+          "required": true,
+          "sha256": "7af2489a6675a01e1cbfb59549c7837863fb33549b00d733be67eb0aceba05ff",
+          "bytes": 340737,
+          "dimensions": {
+            "width": 627,
+            "height": 627
+          }
+        }
+      ],
+      "accessibleModel": {
+        "kind": "content",
+        "nodes": [],
+        "relations": [],
+        "order": [],
+        "branches": []
+      }
+    },
+    {
+      "id": "slide-03",
+      "index": 3,
+      "title": "Prompt Engineering",
+      "visibleText": [
+        "Prompt Engineering",
+        "Context Engineering",
+        "Retrieval Engineering",
+        "Optimización de instrucciones a entregar al modelo",
+        "Optimización dinámica de la ventana de contexto",
+        "Optimización de la recuperación para dar conocimiento al modelo",
+        "Disciplinas de la Ingeniería de IA",
+        "Memory Engineering",
+        "Gestión de la info compartida entre ventanas de contexto",
+        "Tool Engineering",
+        "Optimización del acceso a herramientas y sistema externos",
+        "Skill Engineering",
+        "Optimización de capacidades especializadas y reutilizables",
+        "Loop Engineering",
+        "Diseño de ciclos iterativos de ejecución, evaluación y corrección",
+        "Graph Engineering",
+        "Diseño y orquestación de tareas que controlan y optimizan el flujo",
+        "Guardrail Engineering",
+        "Incorporación de controles, permisos y límites de ejecución",
+        "Harness Engineering"
+      ],
+      "notesContext": {
+        "available": true,
+        "label": "Notas del presentador / contexto adicional",
+        "text": [
+          "Hace un par de años se popularizó el termino prompt engineering como esa  habilidad para crear las instrucciones que las damos a un LLM.  Desde entonces han surgido una serie de términos que identifican cosas que hemos tenido que hacer para hacer que los agentes se comporten como queremos.",
+          "Si resumimos:",
+          "Prompt Engineering, optimizar las instrucciones en una llamada al modelo.",
+          "Context Engineering: optimizar múltiples interacciones (ventana de contexto).",
+          "Retrieval Engineering: optimización de la recuperación de datos que usamos para dar conocmiento al agente.",
+          "Memory Engineering: gestiona la información que compartimos en la ventana de contexto.",
+          "Tool Engineering: acceso a herramientas y sistemas externos.",
+          "Skill Engineering: capacidades especializadas y reutilizables.",
+          "Loop Engineering: Diseño y control de ciclos iterativos de ejecución, evaluación y corrección hasta alcanzar un objetivo verificable o una condición de parada.",
+          "Graph Engineering: Diseño y orquestación de tareas y agentes mediante grafos que definen dependencias, decisiones, ejecución paralela y flujos de control.",
+          "Guardrails Engineering: control y límites a la ejecución de los agentes."
+        ]
+      },
+      "assets": [],
+      "accessibleModel": {
+        "kind": "content",
+        "nodes": [
+          {
+            "id": "node-03-01",
+            "label": "Prompt Engineering"
+          },
+          {
+            "id": "node-03-02",
+            "label": "Context Engineering"
+          },
+          {
+            "id": "node-03-03",
+            "label": "Retrieval Engineering"
+          },
+          {
+            "id": "node-03-04",
+            "label": "Memory Engineering"
+          },
+          {
+            "id": "node-03-05",
+            "label": "Tool Engineering"
+          },
+          {
+            "id": "node-03-06",
+            "label": "Skill Engineering"
+          },
+          {
+            "id": "node-03-07",
+            "label": "Loop Engineering"
+          },
+          {
+            "id": "node-03-08",
+            "label": "Graph Engineering"
+          },
+          {
+            "id": "node-03-09",
+            "label": "Guardrail Engineering"
+          },
+          {
+            "id": "node-03-10",
+            "label": "Harness Engineering"
+          }
+        ],
+        "relations": [
+          {
+            "from": "node-03-01",
+            "to": "node-03-02",
+            "kind": "sequence"
+          },
+          {
+            "from": "node-03-02",
+            "to": "node-03-03",
+            "kind": "sequence"
+          },
+          {
+            "from": "node-03-03",
+            "to": "node-03-04",
+            "kind": "sequence"
+          },
+          {
+            "from": "node-03-04",
+            "to": "node-03-05",
+            "kind": "sequence"
+          },
+          {
+            "from": "node-03-05",
+            "to": "node-03-06",
+            "kind": "sequence"
+          },
+          {
+            "from": "node-03-06",
+            "to": "node-03-07",
+            "kind": "sequence"
+          },
+          {
+            "from": "node-03-07",
+            "to": "node-03-08",
+            "kind": "sequence"
+          },
+          {
+            "from": "node-03-08",
+            "to": "node-03-09",
+            "kind": "sequence"
+          },
+          {
+            "from": "node-03-09",
+            "to": "node-03-10",
+            "kind": "sequence"
+          }
+        ],
+        "order": [
+          "node-03-01",
+          "node-03-02",
+          "node-03-03",
+          "node-03-04",
+          "node-03-05",
+          "node-03-06",
+          "node-03-07",
+          "node-03-08",
+          "node-03-09",
+          "node-03-10"
+        ],
+        "branches": []
+      }
+    },
+    {
+      "id": "slide-04",
+      "index": 4,
+      "title": "Prompt Engineering",
+      "visibleText": [
+        "Prompt Engineering",
+        "Context Engineering",
+        "Retrieval Engineering",
+        "Optimización de instrucciones a entregar al modelo",
+        "Optimización dinámica de la ventana de contexto",
+        "Optimización de la recuperación para dar conocimiento al modelo",
+        "Disciplinas de la Ingeniería de IA",
+        "Memory Engineering",
+        "Gestión de la info compartida entre ventanas de contexto",
+        "Tool Engineering",
+        "Optimización del acceso a herramientas y sistema externos",
+        "Skill Engineering",
+        "Optimización de capacidades especializadas y reutilizables",
+        "Loop Engineering",
+        "Diseño de ciclos iterativos de ejecución, evaluación y corrección",
+        "Graph Engineering",
+        "Diseño y orquestación de tareas que controlan y optimizan el flujo",
+        "Guardrail Engineering",
+        "Incorporación de controles, permisos y límites de ejecución",
+        "Harness Engineering"
+      ],
+      "notesContext": {
+        "available": true,
+        "label": "Notas del presentador / contexto adicional",
+        "text": [
+          "Loop Engineering y Graph Engineering son términos parecidos y relacionados, pero difieren en el enfoque:",
+          "Loop Engineering se enfoca en iterar hasta alcanzar la realización de un objetivo verificable o una condición de parada.",
+          "Graph Engineering se enfoca en la optimización de la orquestación del flujo con ejecuciones secuenciales y/o paraleles cuando sea posible cumpliendo dependencias existentes."
+        ]
+      },
+      "assets": [
+        {
+          "src": "assets/images/image-04.png",
+          "type": "image",
+          "required": true,
+          "sha256": "0f01b30abf2acbba70b7040bbed9eeb6fb295e4b27015c866f1b43ed0565aeb4",
+          "bytes": 16524,
+          "dimensions": {
+            "width": 1317,
+            "height": 1547
+          }
+        }
+      ],
+      "accessibleModel": {
+        "kind": "content",
+        "nodes": [
+          {
+            "id": "node-04-01",
+            "label": "Prompt Engineering"
+          },
+          {
+            "id": "node-04-02",
+            "label": "Context Engineering"
+          },
+          {
+            "id": "node-04-03",
+            "label": "Retrieval Engineering"
+          },
+          {
+            "id": "node-04-04",
+            "label": "Memory Engineering"
+          },
+          {
+            "id": "node-04-05",
+            "label": "Tool Engineering"
+          },
+          {
+            "id": "node-04-06",
+            "label": "Skill Engineering"
+          },
+          {
+            "id": "node-04-07",
+            "label": "Loop Engineering"
+          },
+          {
+            "id": "node-04-08",
+            "label": "Graph Engineering"
+          },
+          {
+            "id": "node-04-09",
+            "label": "Guardrail Engineering"
+          },
+          {
+            "id": "node-04-10",
+            "label": "Harness Engineering"
+          }
+        ],
+        "relations": [
+          {
+            "from": "node-04-01",
+            "to": "node-04-02",
+            "kind": "sequence"
+          },
+          {
+            "from": "node-04-02",
+            "to": "node-04-03",
+            "kind": "sequence"
+          },
+          {
+            "from": "node-04-03",
+            "to": "node-04-04",
+            "kind": "sequence"
+          },
+          {
+            "from": "node-04-04",
+            "to": "node-04-05",
+            "kind": "sequence"
+          },
+          {
+            "from": "node-04-05",
+            "to": "node-04-06",
+            "kind": "sequence"
+          },
+          {
+            "from": "node-04-06",
+            "to": "node-04-07",
+            "kind": "sequence"
+          },
+          {
+            "from": "node-04-07",
+            "to": "node-04-08",
+            "kind": "sequence"
+          },
+          {
+            "from": "node-04-08",
+            "to": "node-04-09",
+            "kind": "sequence"
+          },
+          {
+            "from": "node-04-09",
+            "to": "node-04-10",
+            "kind": "sequence"
+          }
+        ],
+        "order": [
+          "node-04-01",
+          "node-04-02",
+          "node-04-03",
+          "node-04-04",
+          "node-04-05",
+          "node-04-06",
+          "node-04-07",
+          "node-04-08",
+          "node-04-09",
+          "node-04-10"
+        ],
+        "branches": []
+      }
+    },
+    {
+      "id": "slide-05",
+      "index": 5,
+      "title": "¿De que nos sirven los Graphs y Loops en desarrollo de software con Agentes?",
+      "visibleText": [
+        "¿De que nos sirven los Graphs y Loops en desarrollo de software con Agentes?"
+      ],
+      "notesContext": {
+        "available": true,
+        "label": "Notas del presentador / contexto adicional",
+        "text": [
+          "¿No se si se han dado cuenta, pero si descargan la última versión de Kiro ya no se hace referencia a VibeCoding por ningún lado?",
+          "Los graphs nos sirven para poder pedirle a nuestro agente que haga una serire de tareas sin tener que pedírselas una a una.",
+          "Los loops viven dentro de los workflows y no permiten que se hagan iteraciones de revisión y mejora hasta que se cumpla una condición. Como que la ejecución de las pruebas sea exitosas."
+        ]
+      },
+      "assets": [],
+      "accessibleModel": {
+        "kind": "content",
+        "nodes": [],
+        "relations": [],
+        "order": [],
+        "branches": []
+      }
+    },
+    {
+      "id": "slide-06",
+      "index": 6,
+      "title": "¿Cómo debe ser un Loop funcional?",
+      "visibleText": [
+        "¿Cómo debe ser un Loop funcional?"
+      ],
+      "notesContext": {
+        "available": true,
+        "label": "Notas del presentador / contexto adicional",
+        "text": [
+          "Un Loop bien diseñado en Loop Engineering debe permitir que un agente ejecute una tarea de manera autónoma, compruebe si está progresando, corrija errores y se detenga cuando corresponda, sin desperdiciar recursos ni perder el objetivo.",
+          "La clave no es simplemente repetir llamadas a un LLM, sino controlar la trayectoria de ejecución para alcanzar un resultado verificable.",
+          "1. Las 10 características que considero fundamentales",
+          "Característica",
+          "Qué debe garantizar",
+          "1. Objetivo verificable",
+          "Tener criterios de aceptación claros para determinar cuándo se ha completado la tarea. No depender exclusivamente de que el LLM declare que ha terminado.",
+          "2. Observación del entorno",
+          "Obtener el estado real de la tarea mediante herramientas, resultados de operaciones y otras evidencias externas.",
+          "3. Ejecución adaptativa",
+          "Seleccionar la siguiente acción utilizando el objetivo, el estado actual y los resultados anteriores, sin limitarse a repetir un procedimiento fijo.",
+          "4. Verificación de resultados",
+          "Comprobar que cada acción relevante produjo el efecto esperado, preferiblemente mediante verificaciones deterministas.",
+          "5. Medición del progreso",
+          "Identificar si las iteraciones acercan al agente al objetivo o si está repitiendo acciones sin avances.",
+          "6. Recuperación de errores",
+          "Poder reintentar, cambiar de estrategia, revertir una operación, solicitar ayuda o abandonar la tarea según el tipo de fallo.",
+          "7. Gestión del estado",
+          "Conservar el objetivo, los resultados, las decisiones y el trabajo verificado entre iteraciones, evitando repetir operaciones ya completadas.",
+          "8. Terminación controlada",
+          "Establecer condiciones explícitas para finalizar por éxito, fallo, bloqueo, cancelación o agotamiento de recursos.",
+          "9. Control de recursos y seguridad",
+          "Limitar iteraciones, tiempo, tokens, costes y acciones autorizadas, aplicando aprobaciones cuando sean necesarias.",
+          "10. Observabilidad y trazabilidad",
+          "Registrar decisiones, llamadas a herramientas, verificaciones, errores, consumo y evolución del estado para analizar y mejorar el loop.",
+          "Estas características son consistentes con los patrones de ejecución de agentes de Anthropic, los mecanismos de control del OpenAI Agents SDK y las propuestas recientes de Loop Engineering"
+        ]
+      },
+      "assets": [
+        {
+          "src": "assets/images/image-05.png",
+          "type": "image",
+          "required": true,
+          "sha256": "4ed405fb1648f3e2237e1e2ddd84a32d83ed8112ad36b709598349d334f1d108",
+          "bytes": 2139490,
+          "dimensions": {
+            "width": 1672,
+            "height": 941
+          }
+        },
+        {
+          "src": "assets/images/image-01.png",
+          "type": "image",
+          "required": true,
+          "sha256": "7af2489a6675a01e1cbfb59549c7837863fb33549b00d733be67eb0aceba05ff",
+          "bytes": 340737,
+          "dimensions": {
+            "width": 627,
+            "height": 627
+          }
+        }
+      ],
+      "accessibleModel": {
+        "kind": "content",
+        "nodes": [
+          {
+            "id": "node-06-01",
+            "label": "Objetivo verificable"
+          },
+          {
+            "id": "node-06-02",
+            "label": "Observación del entorno"
+          },
+          {
+            "id": "node-06-03",
+            "label": "Ejecución adaptativa"
+          },
+          {
+            "id": "node-06-04",
+            "label": "Verificación de resultados"
+          },
+          {
+            "id": "node-06-05",
+            "label": "Medición del progreso"
+          },
+          {
+            "id": "node-06-06",
+            "label": "Recuperación de errores"
+          },
+          {
+            "id": "node-06-07",
+            "label": "Gestión del estado"
+          },
+          {
+            "id": "node-06-08",
+            "label": "Terminación controlada"
+          },
+          {
+            "id": "node-06-09",
+            "label": "Control de recursos y seguridad"
+          },
+          {
+            "id": "node-06-10",
+            "label": "Observabilidad y trazabilidad"
+          }
+        ],
+        "relations": [
+          {
+            "from": "node-06-01",
+            "to": "node-06-02",
+            "kind": "sequence"
+          },
+          {
+            "from": "node-06-02",
+            "to": "node-06-03",
+            "kind": "sequence"
+          },
+          {
+            "from": "node-06-03",
+            "to": "node-06-04",
+            "kind": "sequence"
+          },
+          {
+            "from": "node-06-04",
+            "to": "node-06-05",
+            "kind": "sequence"
+          },
+          {
+            "from": "node-06-05",
+            "to": "node-06-06",
+            "kind": "sequence"
+          },
+          {
+            "from": "node-06-06",
+            "to": "node-06-07",
+            "kind": "sequence"
+          },
+          {
+            "from": "node-06-07",
+            "to": "node-06-08",
+            "kind": "sequence"
+          },
+          {
+            "from": "node-06-08",
+            "to": "node-06-09",
+            "kind": "sequence"
+          },
+          {
+            "from": "node-06-09",
+            "to": "node-06-10",
+            "kind": "sequence"
+          }
+        ],
+        "order": [
+          "node-06-01",
+          "node-06-02",
+          "node-06-03",
+          "node-06-04",
+          "node-06-05",
+          "node-06-06",
+          "node-06-07",
+          "node-06-08",
+          "node-06-09",
+          "node-06-10"
+        ],
+        "branches": []
+      }
+    },
+    {
+      "id": "slide-07",
+      "index": 7,
+      "title": "¿Cómo se pueden hacer Graphs y Loops en Kiro?",
+      "visibleText": [
+        "¿Cómo se pueden hacer Graphs y Loops en Kiro?"
+      ],
+      "notesContext": {
+        "available": true,
+        "label": "Notas del presentador / contexto adicional",
+        "text": [
+          "¿No se si se han dado cuenta, pero si descargan la última versión de Kiro ya no se hace referencia a VibeCoding por ningún lado?",
+          "Los workflows nos sirven para poder pedirle a nuestro agente que haga una serire de tareas de forma sin tener que pedírselas una a una.",
+          "Los loop viven dentro de los workflows y no permiten que se hagan iteraciones de revisión y mejora hasta que se cumpla una condición. Como que la ejecución de las pruebas sean exitosas."
+        ]
+      },
+      "assets": [],
+      "accessibleModel": {
+        "kind": "content",
+        "nodes": [],
+        "relations": [],
+        "order": [],
+        "branches": []
+      }
+    },
+    {
+      "id": "slide-08",
+      "index": 8,
+      "title": "Loop Programático usando Kiro CLI",
+      "visibleText": [
+        "Loop Programático usando Kiro CLI",
+        "Una opción es usar kiro-cli dentro de scripts y controlar el flujo aprovechando las primitivas del sistema operativo.",
+        "El paramento –no-interactive ejecuta Kiro CLI sin preguntas ni interfaz interactiva.",
+        "El parámetro –trust-tools autoriza únicamente las herramientas especificadas durante esa ejecución."
+      ],
+      "notesContext": null,
+      "assets": [
+        {
+          "src": "assets/images/image-06.png",
+          "type": "image",
+          "required": true,
+          "sha256": "5579611355388c1456d703d395453ef2000dbfc3ecde146d462cd0029c980212",
+          "bytes": 36324,
+          "dimensions": {
+            "width": 1088,
+            "height": 162
+          }
+        }
+      ],
+      "accessibleModel": {
+        "kind": "content",
+        "nodes": [
+          {
+            "id": "node-08-01",
+            "label": "Loop Programático usando Kiro CLI"
+          },
+          {
+            "id": "node-08-02",
+            "label": "Una opción es usar kiro-cli dentro de scripts y controlar el flujo aprovechando las primitivas del sistema operativo."
+          },
+          {
+            "id": "node-08-03",
+            "label": "El paramento –no-interactive ejecuta Kiro CLI sin preguntas ni interfaz interactiva."
+          },
+          {
+            "id": "node-08-04",
+            "label": "El parámetro –trust-tools autoriza únicamente las herramientas especificadas durante esa ejecución."
+          }
+        ],
+        "relations": [
+          {
+            "from": "node-08-01",
+            "to": "node-08-02",
+            "kind": "sequence"
+          },
+          {
+            "from": "node-08-02",
+            "to": "node-08-03",
+            "kind": "sequence"
+          },
+          {
+            "from": "node-08-03",
+            "to": "node-08-04",
+            "kind": "sequence"
+          }
+        ],
+        "order": [
+          "node-08-01",
+          "node-08-02",
+          "node-08-03",
+          "node-08-04"
+        ],
+        "branches": []
+      }
+    },
+    {
+      "id": "slide-09",
+      "index": 9,
+      "title": "Loop Programático usando Kiro CLI",
+      "visibleText": [
+        "Loop Programático usando Kiro CLI"
+      ],
+      "notesContext": {
+        "available": true,
+        "label": "Notas del presentador / contexto adicional",
+        "text": [
+          "La evolución desde Prompt Engineering hacia Context Engineering, Harness Engineering, Loop Engineering y Graph Engineering refleja un cambio importante: ya no basta con optimizar las respuestas de un LLM; ahora necesitamos diseñar sistemas completos que permitan a los modelos ejecutar tareas, mantener información, coordinarse y verificar resultados."
+        ]
+      },
+      "assets": [
+        {
+          "src": "assets/images/image-08.png",
+          "type": "image",
+          "required": true,
+          "sha256": "7ca4e13717069f08abd2819ab73e28790b22ba10fb39f6db0a8c2f82eddf64b2",
+          "bytes": 66066,
+          "dimensions": {
+            "width": 424,
+            "height": 1170
+          }
+        },
+        {
+          "src": "assets/video/demo-01.mp4",
+          "type": "video",
+          "required": true,
+          "sha256": "2a0587781ad6932f2d955892b3a08c581ecbdd2209c31c2f2ef65877b3842c4b",
+          "bytes": 1787593,
+          "poster": "assets/video/poster-01.jpg"
+        },
+        {
+          "src": "assets/video/poster-01.jpg",
+          "type": "poster",
+          "required": true,
+          "sha256": "dc0ce02b917cb789e7e964c68ceb643d7e7b94b4c75509ac66f4480773e136b9",
+          "bytes": 69217,
+          "dimensions": {
+            "width": 1580,
+            "height": 992
+          }
+        },
+        {
+          "src": "assets/video/demo-01.mp4",
+          "type": "video",
+          "required": true,
+          "sha256": "2a0587781ad6932f2d955892b3a08c581ecbdd2209c31c2f2ef65877b3842c4b",
+          "bytes": 1787593,
+          "poster": "assets/video/poster-01.jpg"
+        },
+        {
+          "src": "assets/video/poster-01.jpg",
+          "type": "poster",
+          "required": true,
+          "sha256": "dc0ce02b917cb789e7e964c68ceb643d7e7b94b4c75509ac66f4480773e136b9",
+          "bytes": 69217,
+          "dimensions": {
+            "width": 1580,
+            "height": 992
+          }
+        },
+        {
+          "src": "assets/images/image-01.png",
+          "type": "image",
+          "required": true,
+          "sha256": "7af2489a6675a01e1cbfb59549c7837863fb33549b00d733be67eb0aceba05ff",
+          "bytes": 340737,
+          "dimensions": {
+            "width": 627,
+            "height": 627
+          }
+        },
+        {
+          "src": "assets/images/image-07.png",
+          "type": "image",
+          "required": true,
+          "sha256": "7808da226031e71b95c34351afbf3241a449cc0e964f4ee678e38af8933da553",
+          "bytes": 249753,
+          "dimensions": {
+            "width": 1580,
+            "height": 992
+          }
+        }
+      ],
+      "accessibleModel": {
+        "kind": "content",
+        "nodes": [],
+        "relations": [],
+        "order": [],
+        "branches": []
+      }
+    },
+    {
+      "id": "slide-10",
+      "index": 10,
+      "title": "Loop Programático usando Agentes Kiro CLI",
+      "visibleText": [
+        "Loop Programático usando Agentes Kiro CLI"
+      ],
+      "notesContext": null,
+      "assets": [
+        {
+          "src": "assets/images/image-09.png",
+          "type": "image",
+          "required": true,
+          "sha256": "fb4cb6821eacf8000ac5b3e381f4230866925f4628f6983513b602e69956d893",
+          "bytes": 133455,
+          "dimensions": {
+            "width": 818,
+            "height": 209
+          }
+        },
+        {
+          "src": "assets/images/image-13.png",
+          "type": "image",
+          "required": true,
+          "sha256": "7f9a802098468b72802e47de34b5d6fb6c27422157cc3eb8d47537f8df552294",
+          "bytes": 23610,
+          "dimensions": {
+            "width": 1860,
+            "height": 46
+          }
+        },
+        {
+          "src": "assets/images/image-12.png",
+          "type": "image",
+          "required": true,
+          "sha256": "d6ccfa1378e4d6720e718486d05dd041340b009636f7649d123521cdaa99d181",
+          "bytes": 106127,
+          "dimensions": {
+            "width": 500,
+            "height": 1262
+          }
+        },
+        {
+          "src": "assets/images/image-11.png",
+          "type": "image",
+          "required": true,
+          "sha256": "8fa3b8fff0f488bedcd58b8dd9718faf494a654d729f0d71f5ee3fb5b4353434",
+          "bytes": 154066,
+          "dimensions": {
+            "width": 1193,
+            "height": 231
+          }
+        },
+        {
+          "src": "assets/images/image-10.png",
+          "type": "image",
+          "required": true,
+          "sha256": "33e3a3c7457bf6343d7ab3a7d742f0cd7a016385ee92dc6ae2fbd86df0c88c6e",
+          "bytes": 145496,
+          "dimensions": {
+            "width": 1003,
+            "height": 222
+          }
+        }
+      ],
+      "accessibleModel": {
+        "kind": "workflow",
+        "nodes": [
+          {
+            "id": "node-10-01",
+            "label": "Loop Programático usando Agentes Kiro CLI"
+          },
+          {
+            "id": "node-10-02",
+            "label": "Inicio"
+          },
+          {
+            "id": "node-10-03",
+            "label": "Definir objetivo"
+          },
+          {
+            "id": "node-10-04",
+            "label": "Ejecutar agente"
+          },
+          {
+            "id": "node-10-05",
+            "label": "Verificar resultado"
+          },
+          {
+            "id": "node-10-06",
+            "label": "Corregir o continuar"
+          },
+          {
+            "id": "node-10-07",
+            "label": "Finalizar"
+          }
+        ],
+        "relations": [
+          {
+            "from": "node-10-01",
+            "to": "node-10-02",
+            "kind": "sequence"
+          },
+          {
+            "from": "node-10-02",
+            "to": "node-10-03",
+            "kind": "sequence"
+          },
+          {
+            "from": "node-10-03",
+            "to": "node-10-04",
+            "kind": "sequence"
+          },
+          {
+            "from": "node-10-04",
+            "to": "node-10-05",
+            "kind": "sequence"
+          },
+          {
+            "from": "node-10-05",
+            "to": "node-10-06",
+            "kind": "sequence"
+          },
+          {
+            "from": "node-10-06",
+            "to": "node-10-07",
+            "kind": "sequence"
+          }
+        ],
+        "order": [
+          "node-10-01",
+          "node-10-02",
+          "node-10-03",
+          "node-10-04",
+          "node-10-05",
+          "node-10-06",
+          "node-10-07"
+        ],
+        "branches": []
+      }
+    },
+    {
+      "id": "slide-11",
+      "index": 11,
+      "title": "Loop Programático usando Agentes Kiro CLI",
+      "visibleText": [
+        "Loop Programático usando Agentes Kiro CLI"
+      ],
+      "notesContext": {
+        "available": true,
+        "label": "Notas del presentador / contexto adicional",
+        "text": [
+          "La evolución desde Prompt Engineering hacia Context Engineering, Harness Engineering, Loop Engineering y Graph Engineering refleja un cambio importante: ya no basta con optimizar las respuestas de un LLM; ahora necesitamos diseñar sistemas completos que permitan a los modelos ejecutar tareas, mantener información, coordinarse y verificar resultados."
+        ]
+      },
+      "assets": [
+        {
+          "src": "assets/video/demo-02.mp4",
+          "type": "video",
+          "required": true,
+          "sha256": "10ae90cb6d107913e0822d42a14072a970ed73aea6f45efeed2d83fa8debebec",
+          "bytes": 4763692,
+          "poster": "assets/video/poster-02.jpg"
+        },
+        {
+          "src": "assets/video/poster-02.jpg",
+          "type": "poster",
+          "required": true,
+          "sha256": "384c329461ce302b980b5233e2d1693a7a854b6078030f9e6431e85d477da3d1",
+          "bytes": 15722,
+          "dimensions": {
+            "width": 1580,
+            "height": 992
+          }
+        },
+        {
+          "src": "assets/video/demo-02.mp4",
+          "type": "video",
+          "required": true,
+          "sha256": "10ae90cb6d107913e0822d42a14072a970ed73aea6f45efeed2d83fa8debebec",
+          "bytes": 4763692,
+          "poster": "assets/video/poster-02.jpg"
+        },
+        {
+          "src": "assets/video/poster-02.jpg",
+          "type": "poster",
+          "required": true,
+          "sha256": "384c329461ce302b980b5233e2d1693a7a854b6078030f9e6431e85d477da3d1",
+          "bytes": 15722,
+          "dimensions": {
+            "width": 1580,
+            "height": 992
+          }
+        },
+        {
+          "src": "assets/images/image-14.png",
+          "type": "image",
+          "required": true,
+          "sha256": "cd2766eb5f6563d3f37079ccb9be28196f0c6f71d55d05769232342b5ca613cb",
+          "bytes": 48536,
+          "dimensions": {
+            "width": 1580,
+            "height": 992
+          }
+        }
+      ],
+      "accessibleModel": {
+        "kind": "content",
+        "nodes": [],
+        "relations": [],
+        "order": [],
+        "branches": []
+      }
+    },
+    {
+      "id": "slide-12",
+      "index": 12,
+      "title": "Automatización SDLC usando Kiro Workflows",
+      "visibleText": [
+        "Automatización SDLC usando Kiro Workflows",
+        "Los Workflows son grafos cuyos nodos pueden ser invocaciones a agentes (con contexto independiente), secuencias, loops  y ramas paralelas.",
+        "Pueden ser creados por Kiro para satisfacer la solicitud de un usuario o por el usuario explícitamente con lenguaje natural o manualmente.",
+        "Funcionan en Kiro IDE, CLI y WEB de forma similar. Kiro Crew Workflows es diferente y fuera del alcance de esta presentación.",
+        "Se les llama recetas (recipe) y viven en la carpeta .kiro/workflows en ficheros json o yaml."
+      ],
+      "notesContext": {
+        "available": true,
+        "label": "Notas del presentador / contexto adicional",
+        "text": [
+          "Workflows are graphs of agent steps, sequences, loops, and parallel branches, in a format that people and agents can both read and create. Each step runs in its own session with fresh context, so a reviewer, for example, evaluates the work without inheriting the coder's reasoning."
+        ]
+      },
+      "assets": [],
+      "accessibleModel": {
+        "kind": "content",
+        "nodes": [
+          {
+            "id": "node-12-01",
+            "label": "Automatización SDLC usando Kiro Workflows"
+          },
+          {
+            "id": "node-12-02",
+            "label": "Definición de Workflows"
+          },
+          {
+            "id": "node-12-03",
+            "label": "Nodos de agente"
+          },
+          {
+            "id": "node-12-04",
+            "label": "Secuencias"
+          },
+          {
+            "id": "node-12-05",
+            "label": "Loops"
+          },
+          {
+            "id": "node-12-06",
+            "label": "Ramas paralelas"
+          },
+          {
+            "id": "node-12-07",
+            "label": "IDE"
+          },
+          {
+            "id": "node-12-08",
+            "label": "CLI"
+          },
+          {
+            "id": "node-12-09",
+            "label": "WEB"
+          },
+          {
+            "id": "node-12-10",
+            "label": ".kiro/workflows"
+          }
+        ],
+        "relations": [
+          {
+            "from": "node-12-01",
+            "to": "node-12-02",
+            "kind": "sequence"
+          },
+          {
+            "from": "node-12-02",
+            "to": "node-12-03",
+            "kind": "sequence"
+          },
+          {
+            "from": "node-12-03",
+            "to": "node-12-04",
+            "kind": "sequence"
+          },
+          {
+            "from": "node-12-04",
+            "to": "node-12-05",
+            "kind": "sequence"
+          },
+          {
+            "from": "node-12-05",
+            "to": "node-12-06",
+            "kind": "sequence"
+          },
+          {
+            "from": "node-12-06",
+            "to": "node-12-07",
+            "kind": "sequence"
+          },
+          {
+            "from": "node-12-07",
+            "to": "node-12-08",
+            "kind": "sequence"
+          },
+          {
+            "from": "node-12-08",
+            "to": "node-12-09",
+            "kind": "sequence"
+          },
+          {
+            "from": "node-12-09",
+            "to": "node-12-10",
+            "kind": "sequence"
+          }
+        ],
+        "order": [
+          "node-12-01",
+          "node-12-02",
+          "node-12-03",
+          "node-12-04",
+          "node-12-05",
+          "node-12-06",
+          "node-12-07",
+          "node-12-08",
+          "node-12-09",
+          "node-12-10"
+        ],
+        "branches": []
+      }
+    },
+    {
+      "id": "slide-13",
+      "index": 13,
+      "title": "Automatización SDLC usando Kiro Workflows",
+      "visibleText": [
+        "Automatización SDLC usando Kiro Workflows",
+        "Specs Creation",
+        "Code Generation",
+        "software-spec.workflow",
+        "software-build.workflow",
+        "Refinement",
+        "Testing and Fixing",
+        "Code Deploy",
+        "software-deploy.workflow",
+        "Testing and Fixing"
+      ],
+      "notesContext": {
+        "available": true,
+        "label": "Notas del presentador / contexto adicional",
+        "text": [
+          "Workflows are graphs of agent steps, sequences, loops, and parallel branches, in a format that people and agents can both read and create. Each step runs in its own session with fresh context, so a reviewer, for example, evaluates the work without inheriting the coder's reasoning."
+        ]
+      },
+      "assets": [],
+      "accessibleModel": {
+        "kind": "workflow",
+        "nodes": [
+          {
+            "id": "node-13-01",
+            "label": "Automatización SDLC usando Kiro Workflows"
+          },
+          {
+            "id": "node-13-02",
+            "label": "Specs Creation"
+          },
+          {
+            "id": "node-13-03",
+            "label": "software-spec.workflow"
+          },
+          {
+            "id": "node-13-04",
+            "label": "Code Generation"
+          },
+          {
+            "id": "node-13-05",
+            "label": "software-build.workflow"
+          },
+          {
+            "id": "node-13-06",
+            "label": "Refinement"
+          },
+          {
+            "id": "node-13-07",
+            "label": "Testing and Fixing"
+          },
+          {
+            "id": "node-13-08",
+            "label": "Code"
+          },
+          {
+            "id": "node-13-09",
+            "label": "Deploy"
+          },
+          {
+            "id": "node-13-10",
+            "label": "software-deploy.workflow"
+          }
+        ],
+        "relations": [
+          {
+            "from": "node-13-01",
+            "to": "node-13-02",
+            "kind": "sequence"
+          },
+          {
+            "from": "node-13-02",
+            "to": "node-13-03",
+            "kind": "sequence"
+          },
+          {
+            "from": "node-13-03",
+            "to": "node-13-04",
+            "kind": "sequence"
+          },
+          {
+            "from": "node-13-04",
+            "to": "node-13-05",
+            "kind": "sequence"
+          },
+          {
+            "from": "node-13-05",
+            "to": "node-13-06",
+            "kind": "sequence"
+          },
+          {
+            "from": "node-13-06",
+            "to": "node-13-07",
+            "kind": "sequence"
+          },
+          {
+            "from": "node-13-07",
+            "to": "node-13-08",
+            "kind": "sequence"
+          },
+          {
+            "from": "node-13-08",
+            "to": "node-13-09",
+            "kind": "sequence"
+          },
+          {
+            "from": "node-13-09",
+            "to": "node-13-10",
+            "kind": "sequence"
+          }
+        ],
+        "order": [
+          "node-13-01",
+          "node-13-02",
+          "node-13-03",
+          "node-13-04",
+          "node-13-05",
+          "node-13-06",
+          "node-13-07",
+          "node-13-08",
+          "node-13-09",
+          "node-13-10"
+        ],
+        "branches": []
+      }
+    },
+    {
+      "id": "slide-14",
+      "index": 14,
+      "title": "Automatización SDLC usando Kiro Workflows",
+      "visibleText": [
+        "Automatización SDLC usando Kiro Workflows",
+        "Specs Creation",
+        "software-spec.workflow",
+        "Refinement"
+      ],
+      "notesContext": {
+        "available": true,
+        "label": "Notas del presentador / contexto adicional",
+        "text": [
+          "Workflows are graphs of agent steps, sequences, loops, and parallel branches, in a format that people and agents can both read and create. Each step runs in its own session with fresh context, so a reviewer, for example, evaluates the work without inheriting the coder's reasoning."
+        ]
+      },
+      "assets": [
+        {
+          "src": "assets/images/image-15.png",
+          "type": "image",
+          "required": true,
+          "sha256": "2d75d0ce761d56e5a882d87a7537fd9fc8119cc8f7efffc3f56ecd45b9ea7e59",
+          "bytes": 152799,
+          "dimensions": {
+            "width": 800,
+            "height": 261
+          }
+        },
+        {
+          "src": "assets/images/image-18.png",
+          "type": "image",
+          "required": true,
+          "sha256": "9ed95f9dec03d5fcbc010a58084dfe2a378434fa5676b181691a580995a1596e",
+          "bytes": 14996,
+          "dimensions": {
+            "width": 96,
+            "height": 92
+          }
+        },
+        {
+          "src": "assets/images/image-17.png",
+          "type": "image",
+          "required": true,
+          "sha256": "83e7d6b7d8c182d0ae7c77610389b8d9bc59ec9d82d6b2930939594871a9d61b",
+          "bytes": 92433,
+          "dimensions": {
+            "width": 1858,
+            "height": 440
+          }
+        },
+        {
+          "src": "assets/images/image-16.png",
+          "type": "image",
+          "required": true,
+          "sha256": "f7df7d7bdc8b5e501b933fbff2a5499d34a9b54030ddff99e1e0246d8269e4ed",
+          "bytes": 39576,
+          "dimensions": {
+            "width": 1035,
+            "height": 58
+          }
+        }
+      ],
+      "accessibleModel": {
+        "kind": "workflow",
+        "nodes": [
+          {
+            "id": "node-14-01",
+            "label": "Automatización SDLC usando Kiro Workflows"
+          },
+          {
+            "id": "node-14-02",
+            "label": "Specs Creation"
+          },
+          {
+            "id": "node-14-03",
+            "label": "software-spec.workflow"
+          },
+          {
+            "id": "node-14-04",
+            "label": "Refinement"
+          }
+        ],
+        "relations": [
+          {
+            "from": "node-14-01",
+            "to": "node-14-02",
+            "kind": "sequence"
+          },
+          {
+            "from": "node-14-02",
+            "to": "node-14-03",
+            "kind": "sequence"
+          },
+          {
+            "from": "node-14-03",
+            "to": "node-14-04",
+            "kind": "sequence"
+          }
+        ],
+        "order": [
+          "node-14-01",
+          "node-14-02",
+          "node-14-03",
+          "node-14-04"
+        ],
+        "branches": []
+      }
+    },
+    {
+      "id": "slide-15",
+      "index": 15,
+      "title": "Automatización SDLC usando Kiro Workflows",
+      "visibleText": [
+        "Automatización SDLC usando Kiro Workflows",
+        "Specs Creation",
+        "software-spec.workflow",
+        "Refinement",
+        "Se crea la carpeta del nuevo proyecto",
+        "Se define el workflow, agente, esfuerzo y prompt inicial",
+        "Se define un bucle se revisión y aprobación con iteraciones máximas",
+        "El Analyst crea la spec y hace preguntas al usuario y búsquedas web para llenar vacíos existentes en la spec",
+        "El Reviewer revisa la spec y emite un jucio si la misma está lista para implementarse emitiendo una opinión"
+      ],
+      "notesContext": {
+        "available": true,
+        "label": "Notas del presentador / contexto adicional",
+        "text": [
+          "Workflows are graphs of agent steps, sequences, loops, and parallel branches, in a format that people and agents can both read and create. Each step runs in its own session with fresh context, so a reviewer, for example, evaluates the work without inheriting the coder's reasoning."
+        ]
+      },
+      "assets": [
+        {
+          "src": "assets/images/image-19.png",
+          "type": "image",
+          "required": true,
+          "sha256": "c76e12d715a023e44698bf0323ff1598d12257598df46ee93a28997ed2fb5ba0",
+          "bytes": 264432,
+          "dimensions": {
+            "width": 1780,
+            "height": 1366
+          }
+        },
+        {
+          "src": "assets/images/image-01.png",
+          "type": "image",
+          "required": true,
+          "sha256": "7af2489a6675a01e1cbfb59549c7837863fb33549b00d733be67eb0aceba05ff",
+          "bytes": 340737,
+          "dimensions": {
+            "width": 627,
+            "height": 627
+          }
+        }
+      ],
+      "accessibleModel": {
+        "kind": "workflow",
+        "nodes": [
+          {
+            "id": "node-15-01",
+            "label": "Automatización SDLC usando Kiro Workflows"
+          },
+          {
+            "id": "node-15-02",
+            "label": "Specs Creation"
+          },
+          {
+            "id": "node-15-03",
+            "label": "software-spec.workflow"
+          },
+          {
+            "id": "node-15-04",
+            "label": "Refinement"
+          },
+          {
+            "id": "node-15-05",
+            "label": "Se crea la carpeta del nuevo proyecto"
+          },
+          {
+            "id": "node-15-06",
+            "label": "Se define el workflow, agente, esfuerzo y prompt inicial"
+          },
+          {
+            "id": "node-15-07",
+            "label": "Se define un bucle se revisión y aprobación con iteraciones máximas"
+          },
+          {
+            "id": "node-15-08",
+            "label": "El Analyst crea la spec y hace preguntas al usuario y búsquedas web para llenar vacíos existentes en la spec"
+          },
+          {
+            "id": "node-15-09",
+            "label": "El Reviewer revisa la spec y emite un jucio si la misma está lista para implementarse emitiendo una opinión"
+          }
+        ],
+        "relations": [
+          {
+            "from": "node-15-01",
+            "to": "node-15-02",
+            "kind": "sequence"
+          },
+          {
+            "from": "node-15-02",
+            "to": "node-15-03",
+            "kind": "sequence"
+          },
+          {
+            "from": "node-15-03",
+            "to": "node-15-04",
+            "kind": "sequence"
+          },
+          {
+            "from": "node-15-04",
+            "to": "node-15-05",
+            "kind": "sequence"
+          },
+          {
+            "from": "node-15-05",
+            "to": "node-15-06",
+            "kind": "sequence"
+          },
+          {
+            "from": "node-15-06",
+            "to": "node-15-07",
+            "kind": "sequence"
+          },
+          {
+            "from": "node-15-07",
+            "to": "node-15-08",
+            "kind": "sequence"
+          },
+          {
+            "from": "node-15-08",
+            "to": "node-15-09",
+            "kind": "sequence"
+          }
+        ],
+        "order": [
+          "node-15-01",
+          "node-15-02",
+          "node-15-03",
+          "node-15-04",
+          "node-15-05",
+          "node-15-06",
+          "node-15-07",
+          "node-15-08",
+          "node-15-09"
+        ],
+        "branches": []
+      }
+    },
+    {
+      "id": "slide-16",
+      "index": 16,
+      "title": "Automatización SDLC usando Kiro Workflows",
+      "visibleText": [
+        "Automatización SDLC usando Kiro Workflows",
+        "Code Generation",
+        "software-build.workflow",
+        "Testing and Fixing"
+      ],
+      "notesContext": {
+        "available": true,
+        "label": "Notas del presentador / contexto adicional",
+        "text": [
+          "Workflows are graphs of agent steps, sequences, loops, and parallel branches, in a format that people and agents can both read and create. Each step runs in its own session with fresh context, so a reviewer, for example, evaluates the work without inheriting the coder's reasoning."
+        ]
+      },
+      "assets": [
+        {
+          "src": "assets/images/image-20.png",
+          "type": "image",
+          "required": true,
+          "sha256": "fd6e76215a67185e467c48edd55895fd16f7aae3e81210fc721704734f4f3900",
+          "bytes": 159994,
+          "dimensions": {
+            "width": 2410,
+            "height": 796
+          }
+        },
+        {
+          "src": "assets/images/image-18.png",
+          "type": "image",
+          "required": true,
+          "sha256": "9ed95f9dec03d5fcbc010a58084dfe2a378434fa5676b181691a580995a1596e",
+          "bytes": 14996,
+          "dimensions": {
+            "width": 96,
+            "height": 92
+          }
+        }
+      ],
+      "accessibleModel": {
+        "kind": "workflow",
+        "nodes": [
+          {
+            "id": "node-16-01",
+            "label": "Automatización SDLC usando Kiro Workflows"
+          },
+          {
+            "id": "node-16-02",
+            "label": "Code Generation"
+          },
+          {
+            "id": "node-16-03",
+            "label": "software-build.workflow"
+          },
+          {
+            "id": "node-16-04",
+            "label": "Testing and Fixing"
+          }
+        ],
+        "relations": [
+          {
+            "from": "node-16-01",
+            "to": "node-16-02",
+            "kind": "sequence"
+          },
+          {
+            "from": "node-16-02",
+            "to": "node-16-03",
+            "kind": "sequence"
+          },
+          {
+            "from": "node-16-03",
+            "to": "node-16-04",
+            "kind": "sequence"
+          }
+        ],
+        "order": [
+          "node-16-01",
+          "node-16-02",
+          "node-16-03",
+          "node-16-04"
+        ],
+        "branches": []
+      }
+    },
+    {
+      "id": "slide-17",
+      "index": 17,
+      "title": "Automatización SDLC usando Kiro Workflows",
+      "visibleText": [
+        "Automatización SDLC usando Kiro Workflows",
+        "Code Deploy",
+        "software-deploy.workflow",
+        "Testing and Fixing"
+      ],
+      "notesContext": {
+        "available": true,
+        "label": "Notas del presentador / contexto adicional",
+        "text": [
+          "Workflows are graphs of agent steps, sequences, loops, and parallel branches, in a format that people and agents can both read and create. Each step runs in its own session with fresh context, so a reviewer, for example, evaluates the work without inheriting the coder's reasoning."
+        ]
+      },
+      "assets": [
+        {
+          "src": "assets/images/image-21.png",
+          "type": "image",
+          "required": true,
+          "sha256": "6cc6c496f3c49e64a83e13faaf4b0411a9558b5661989584702a0a8df6678b2b",
+          "bytes": 112789,
+          "dimensions": {
+            "width": 2390,
+            "height": 432
+          }
+        },
+        {
+          "src": "assets/images/image-18.png",
+          "type": "image",
+          "required": true,
+          "sha256": "9ed95f9dec03d5fcbc010a58084dfe2a378434fa5676b181691a580995a1596e",
+          "bytes": 14996,
+          "dimensions": {
+            "width": 96,
+            "height": 92
+          }
+        }
+      ],
+      "accessibleModel": {
+        "kind": "workflow",
+        "nodes": [
+          {
+            "id": "node-17-01",
+            "label": "Automatización SDLC usando Kiro Workflows"
+          },
+          {
+            "id": "node-17-02",
+            "label": "Code"
+          },
+          {
+            "id": "node-17-03",
+            "label": "Deploy"
+          },
+          {
+            "id": "node-17-04",
+            "label": "software-deploy.workflow"
+          },
+          {
+            "id": "node-17-05",
+            "label": "Testing and Fixing"
+          }
+        ],
+        "relations": [
+          {
+            "from": "node-17-01",
+            "to": "node-17-02",
+            "kind": "sequence"
+          },
+          {
+            "from": "node-17-02",
+            "to": "node-17-03",
+            "kind": "sequence"
+          },
+          {
+            "from": "node-17-03",
+            "to": "node-17-04",
+            "kind": "sequence"
+          },
+          {
+            "from": "node-17-04",
+            "to": "node-17-05",
+            "kind": "sequence"
+          }
+        ],
+        "order": [
+          "node-17-01",
+          "node-17-02",
+          "node-17-03",
+          "node-17-04",
+          "node-17-05"
+        ],
+        "branches": []
+      }
+    },
+    {
+      "id": "slide-18",
+      "index": 18,
+      "title": "Automatización SDLC usando Kiro Workflows",
+      "visibleText": [
+        "Automatización SDLC usando Kiro Workflows"
+      ],
+      "notesContext": {
+        "available": true,
+        "label": "Notas del presentador / contexto adicional",
+        "text": [
+          "Workflows are graphs of agent steps, sequences, loops, and parallel branches, in a format that people and agents can both read and create. Each step runs in its own session with fresh context, so a reviewer, for example, evaluates the work without inheriting the coder's reasoning."
+        ]
+      },
+      "assets": [
+        {
+          "src": "assets/video/demo-03.mp4",
+          "type": "video",
+          "required": true,
+          "sha256": "7f2a358fcd1a801b3714c4a234e5e0df1c98b0864c5b47764ffdbb40be6ad33d",
+          "bytes": 15018157,
+          "poster": "assets/video/poster-03.jpg"
+        },
+        {
+          "src": "assets/video/poster-03.jpg",
+          "type": "poster",
+          "required": true,
+          "sha256": "77f39c93e6760ca4d5139e6249379d3bb8a3c028632656809df97c5b14cf854a",
+          "bytes": 108110,
+          "dimensions": {
+            "width": 1534,
+            "height": 1040
+          }
+        },
+        {
+          "src": "assets/video/demo-03.mp4",
+          "type": "video",
+          "required": true,
+          "sha256": "7f2a358fcd1a801b3714c4a234e5e0df1c98b0864c5b47764ffdbb40be6ad33d",
+          "bytes": 15018157,
+          "poster": "assets/video/poster-03.jpg"
+        },
+        {
+          "src": "assets/video/poster-03.jpg",
+          "type": "poster",
+          "required": true,
+          "sha256": "77f39c93e6760ca4d5139e6249379d3bb8a3c028632656809df97c5b14cf854a",
+          "bytes": 108110,
+          "dimensions": {
+            "width": 1534,
+            "height": 1040
+          }
+        },
+        {
+          "src": "assets/images/image-22.png",
+          "type": "image",
+          "required": true,
+          "sha256": "a33533a523c72a055641cdf507b8cee87eb4aa11a86af65ac27f2e33ac06f8ed",
+          "bytes": 384098,
+          "dimensions": {
+            "width": 1534,
+            "height": 1040
+          }
+        }
+      ],
+      "accessibleModel": {
+        "kind": "content",
+        "nodes": [],
+        "relations": [],
+        "order": [],
+        "branches": []
+      }
+    },
+    {
+      "id": "slide-19",
+      "index": 19,
+      "title": "¡Ya sabemos como hacer Loops con Kiro!",
+      "visibleText": [
+        "¡Ya sabemos como hacer Loops con Kiro!"
+      ],
+      "notesContext": null,
+      "assets": [
+        {
+          "src": "assets/images/image-23.png",
+          "type": "image",
+          "required": true,
+          "sha256": "fb7cf2c697774f85905a03fc3d0ebcaae417c713d8fa7d503ccd897518ffd3db",
+          "bytes": 1335681,
+          "dimensions": {
+            "width": 1861,
+            "height": 782
+          }
+        },
+        {
+          "src": "assets/images/image-04.png",
+          "type": "image",
+          "required": true,
+          "sha256": "0f01b30abf2acbba70b7040bbed9eeb6fb295e4b27015c866f1b43ed0565aeb4",
+          "bytes": 16524,
+          "dimensions": {
+            "width": 1317,
+            "height": 1547
+          }
+        }
+      ],
+      "accessibleModel": {
+        "kind": "content",
+        "nodes": [],
+        "relations": [],
+        "order": [],
+        "branches": []
+      }
+    },
+    {
+      "id": "slide-20",
+      "index": 20,
+      "title": "¿Cómo aprender más sobre Loop Engineering con Kiro?",
+      "visibleText": [
+        "¿Cómo aprender más sobre Loop Engineering con Kiro?",
+        "loop-and-graph-engineering-with-kiro"
+      ],
+      "notesContext": null,
+      "assets": [
+        {
+          "src": "assets/images/image-04.png",
+          "type": "image",
+          "required": true,
+          "sha256": "0f01b30abf2acbba70b7040bbed9eeb6fb295e4b27015c866f1b43ed0565aeb4",
+          "bytes": 16524,
+          "dimensions": {
+            "width": 1317,
+            "height": 1547
+          }
+        },
+        {
+          "src": "assets/images/image-25.png",
+          "type": "image",
+          "required": true,
+          "sha256": "dee5fe3e6fb24985839ac1f4ba2996015e4d91e3f0b688d409df7552efc074bc",
+          "bytes": 1428,
+          "dimensions": {
+            "width": 900,
+            "height": 900
+          }
+        },
+        {
+          "src": "assets/images/image-24.png",
+          "type": "image",
+          "required": true,
+          "sha256": "46a86df409d64efc4e9a6f44af225c707bcc53c84efd86988882a77b67d426a0",
+          "bytes": 104077,
+          "dimensions": {
+            "width": 605,
+            "height": 744
+          }
+        }
+      ],
+      "accessibleModel": {
+        "kind": "content",
+        "nodes": [],
+        "relations": [],
+        "order": [],
+        "branches": []
+      }
+    },
+    {
+      "id": "slide-21",
+      "index": 21,
+      "title": "¡Muchas Gracias!",
+      "visibleText": [
+        "¡Muchas Gracias!"
+      ],
+      "notesContext": null,
+      "assets": [
+        {
+          "src": "assets/images/image-03.png",
+          "type": "image",
+          "required": true,
+          "sha256": "ef52452165350da93f3602ff83212301052df6ded9e191202c34e031780d2527",
+          "bytes": 2944062,
+          "dimensions": {
+            "width": 1448,
+            "height": 1086
+          }
+        },
+        {
+          "src": "assets/images/image-04.png",
+          "type": "image",
+          "required": true,
+          "sha256": "0f01b30abf2acbba70b7040bbed9eeb6fb295e4b27015c866f1b43ed0565aeb4",
+          "bytes": 16524,
+          "dimensions": {
+            "width": 1317,
+            "height": 1547
+          }
+        },
+        {
+          "src": "assets/images/image-01.png",
+          "type": "image",
+          "required": true,
+          "sha256": "7af2489a6675a01e1cbfb59549c7837863fb33549b00d733be67eb0aceba05ff",
+          "bytes": 340737,
+          "dimensions": {
+            "width": 627,
+            "height": 627
+          }
+        }
+      ],
+      "accessibleModel": {
+        "kind": "content",
+        "nodes": [],
+        "relations": [],
+        "order": [],
+        "branches": []
+      }
+    },
+    {
+      "id": "slide-22",
+      "index": 22,
+      "title": "Gracias",
+      "visibleText": [
+        "Gracias"
+      ],
+      "notesContext": null,
+      "assets": [
+        {
+          "src": "assets/images/image-04.png",
+          "type": "image",
+          "required": true,
+          "sha256": "0f01b30abf2acbba70b7040bbed9eeb6fb295e4b27015c866f1b43ed0565aeb4",
+          "bytes": 16524,
+          "dimensions": {
+            "width": 1317,
+            "height": 1547
+          }
+        }
+      ],
+      "accessibleModel": {
+        "kind": "content",
+        "nodes": [],
+        "relations": [],
+        "order": [],
+        "branches": []
+      }
+    }
+  ]
+}
